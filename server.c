@@ -1,33 +1,27 @@
 #include<sys/wait.h>
-#include "uftp.h"
+#include "program.h"
 #include <dirent.h>
 #include <sys/stat.h>
 
 
 /* ***********************************************************************************
- * la procedura get_directory_contents						     *
- *  - Estrae il contenuto della directory indicata da directory_path e lo riporta    *
- *  - in directory_listing   							     *
- *************************************************************************************/
+ * get_directory_contents procedure *
+*************************************************************************************/
 
-char* get_directory_contents(char* directory_path)
-{
-char* directory_listing = NULL;
-  
-  	// apre la directory 
+char* get_directory_contents(char* directory_path){
+
+    char* directory_listing = NULL;
+
+  	// open directory
   	DIR* path = opendir(directory_path);
-
-  	// Controllo successo apertura della directory
   	if(path != NULL){
 		directory_listing = (char*) malloc(sizeof(char)*MAX_BYTE_DIR);
       		directory_listing[0] = '\0';
 
-      		//Struct nella quale vengono immagazzinate info sui files o sotto-directory di directory_path	
+      		// struct of info on files or subdirectories of directory_path
       		struct dirent* underlying_file = NULL;
 
-      		/* Readdir ritorna,in caso di successo, un puntatore alla struttura contenente le informazioni
-	 	e si posiziona sulla voce successiva, è possibile quindi iterare in modo da leggere l'intero contenuto*/
-  
+      		// readdir returns, if successful, a pointer to the structure containing the information and goes to the next item
       		while((underlying_file = readdir(path)) != NULL){
 			strcat(directory_listing, underlying_file->d_name);
           	strcat(directory_listing, "\n");
@@ -38,364 +32,258 @@ char* directory_listing = NULL;
 }
 
 /* **********************************************************************************
- * la procedura srv_ric								    *
- *  - Prepara ack di risposta    						    *
- *  - Apre file di destinazione in scrittura (ack con esito negativo e arresto del  *
- *    processo in caso di errore)						    *
- *  - Invia al client ack con esito positivo ed indirizzo del processo figlio       *
- *  - Lancia procedura ricevi 							    *
- ************************************************************************************/
+ * srv_ric procedure *
+************************************************************************************/
 
-void srv_ric(struct send_file_args *state,struct frame request)
+void srv_ric(struct send_file_args *state,struct frame request){
 
-{
-struct frame reply;
+    struct frame reply;
 
+	// preparation of the response Ack
+	reply.server_port= state->local_sin.sin_port;
+	reply.type=ACK;
 
-	/* -------------------------------------------*		
-	 *    preparazione Ack di risposta            *                  
-	 * -------------------------------------------*/
-
-	reply.server_port= state->local_sin.sin_port;  
-	reply.type=ACK; 
-        
 	socklen_t remote_sinlen=sizeof(state->remote_sin);
 
-	/* --------------------------------------------------------------------*	
-	 * apre il file in scrittura ed in caso di errore termina il processo  *
-         * dopo aver inviato al client un ack con la segnalazione di errore    *               
-	 * --------------------------------------------------------------------*/
-	strncpy(state->new_filename,request.parametro,DIM_NOMEFILE);	 
-	state->f_dest = fopen(request.parametro, "wb");		                           
+	//opening the file in write mode; in case of error the process ends after sending the client an ack with the error report
+	strncpy(state->new_filename,request.parametro,DIM_NOMEFILE);
+	state->f_dest = fopen(request.parametro, "wb");
 	if (state->f_dest== NULL){
-   		printf("\tProcesso %d : ********* Errore apertura file destinazione(%s), esco dal processo  \n ",getpid(),state->new_filename);
+   		printf("\n\t Processo %d : *** Error opening destination file(%s), I quit the process  \n\n ",getpid(),state->new_filename);
 		reply.esito=1;
+		//sendto --> number of sent byte
 		if (sendto(state->s,(void *)&reply, sizeof(struct frame), 0, (struct sockaddr *)&state->remote_sin, remote_sinlen)<0){
-			perror("Trasmissione fallita in procedura send : esco dal processo   \n");
-    			exit(1);
+			perror("\n Transmission failed in send procedure: process ended \n");
+    		exit(1);
 		}
 		exit(1);
-      	}
-				
-	/* -----------------------------------------------------------*	
-	 * risposta al client contenente la porta del processo figlio * 
-	 * -----------------------------------------------------------*/
+    }
 
+	//response to client containing child process port
 	reply.esito=0;
 	if (sendto(state->s, (void *)&reply, sizeof(struct frame), 0, (struct sockaddr *)&state->remote_sin, remote_sinlen)<0){
-		perror("Trasmissione fallita in procedura send : esco dal processo   \n");
+		perror("\n Transmission failed in send procedure: process ended   \n");
     		exit(1);
 	}
-	
-	ricevi(state);
-
+	receive(state);
 }
 
 /* ***********************************************************************************
- * la procedura srv_trasm							     *
- *  - Prepara ack di risposta      						     *
- *  - Se istruzione get apre il file origine in lettura, se list scrive contenuto    *
- *    directory in area di memoria (in entrambi in casi, ack con esito negativo e    *
- *    terminazione processo in caso di errore)					     *
- *  - Invia al client ack positivo ed indirizzo del processo figlio 		     *
- *  - Attende comando START, appena ricevuto richiama procedura trasmetti.	     *
- *************************************************************************************/
+ * srv_trasm procedure *
+*************************************************************************************/
 
-void srv_trasm(struct send_file_args *state,struct frame request)
+void srv_trasm(struct send_file_args *state,struct frame request){
 
-{
-struct frame reply;
+    struct frame reply;
 
-	/* --------------------------------------*		
-	 *   preparazione Ack di risposta        *                     
-	 * --------------------------------------*/
+	// preparation of the response Ack
+	reply.server_port= state->local_sin.sin_port;
+	reply.type=ACK;
+    strncpy(reply.istruz,request.istruz,5);
 
-	reply.server_port= state->local_sin.sin_port;  
-	reply.type=ACK; 
-    	strncpy(reply.istruz,request.istruz,5);
-    
 	socklen_t remote_sinlen=sizeof(state->remote_sin);
 
-	/* --------------------------------------------*		
-	 *  gestione del comando ricevuto  dal client  *                
-	 * --------------------------------------------*/
-			
-	if (strcmp(request.istruz, "get")==0){	
-		
-		/* ----------------------------------------------------------------------------*	
-	 	 * apre il file di origine in lettura ed in caso di errore termina il processo *
-		 * dopo aver inviato al client un ack con la segnalazione di errore            *               
-		 * ----------------------------------------------------------------------------*/		
-	 
-		strncpy(state->file_name,request.parametro,DIM_NOMEFILE); 
-							
-		state->f_src = fopen(request.parametro, "rb");	 			                            
+	// management of the received command
+	if (strcmp(request.istruz, "get")==0){
+
+		// opening the source file in read mode; in case of error the process ends after sending the client an ack with the error report
+	 	strncpy(state->file_name,request.parametro,DIM_NOMEFILE);
+
+		state->f_src = fopen(request.parametro, "rb");
 		if (state->f_src== NULL){
-   			printf("\tProcesso %d : ********* Errore apertura file sorgente (%s)  \n ",getpid(),state->file_name);
+   			printf("\n\t Process %d : *** Error opening source file (%s)  \n ",getpid(),state->file_name);
 			reply.esito=1;
 			if (sendto(state->s,(void *)&reply, sizeof(struct frame), 0, (struct sockaddr *)&state->remote_sin, remote_sinlen)<0){
-				perror("Trasmissione fallita in procedura send : esco dal processo   \n");
-    				exit(1);
+				perror("\n Transmission failed in send procedure: process ended   \n");
+    			exit(1);
 			}
 			exit(1);
-		}     	 		
+		}
 	}
-	else{ 	
-	
-		/* ----------------------------------------------------------------------------*	
-	 	 * Verifica se esiste una directory corrispondente al path specificato,in caso *
-		 * di errore,dopo aver inviato al client un ack con la segnalazione di errore, *
-                 * termina il processo.            					       *
-		 * ----------------------------------------------------------------------------*/
-		
-		strncpy(state->file_name,request.parametro,DIM_NOMEFILE); 
-		//verifica se il file esiste
+	else{
+		strncpy(state->file_name,request.parametro,DIM_NOMEFILE);
+		//check if file exists
   		struct stat file_stat;
  		if (stat(request.parametro, &file_stat) != 0){
-   			printf("La directory %s non esiste , termino il processo  \n", request.parametro);
-	  		reply.esito=1;	
+   			printf("\n Directory %s doesn't exist, I quit the process  \n", request.parametro);
+	  		reply.esito=1;
 			if (sendto(state->s,(void *)&reply, sizeof(struct frame), 0, (struct sockaddr *)&state->remote_sin, remote_sinlen)<0){
-				perror("Trasmissione fallita in procedura send : esco dal processo   \n");
+				perror("\n Transmission failed in send procedure: process ended   \n");
   				exit(1);
 			}
    			exit(1);
  		}
-
-		//verifica se si tratta di una directory
   		if (!S_ISDIR(file_stat.st_mode)) {
-    			printf("%s non è una directory, termino il processo \n", request.parametro);
-			reply.esito=1;	
-			if (sendto(state->s,(void *)&reply, sizeof(struct frame), 0, (struct sockaddr *)&state->remote_sin, remote_sinlen)<0){
-				perror("Trasmissione fallita in procedura send : processo  arrestato  \n");
-    				exit(1);
-			}
-    			 exit(1);
- 		}
-
- 		// scrive in memoria il contenuto della directory
-  		state->path = get_directory_contents(request.parametro); 
- 		  	
-		if(state->path == NULL){
- 		  	fprintf(stderr, "Errore leggendo il contenuto di  %s processo arrestato \n", request.parametro);
+            printf("\n %s it's not a directory, I quit the process \n", request.parametro);
 			reply.esito=1;
 			if (sendto(state->s,(void *)&reply, sizeof(struct frame), 0, (struct sockaddr *)&state->remote_sin, remote_sinlen)<0){
-				perror("Trasmissione fallita in procedura send : processo arrestato   \n");
+				perror("\n Transmission failed in send procedure: process ended  \n");
+                exit(1);
+			}
+            exit(1);
+ 		}
+ 		// write directory content in memory
+  		state->path = get_directory_contents(request.parametro);
+
+		if(state->path == NULL){
+ 		  	fprintf(stderr, "\n *** Error reading the contents of  %s process ended \n", request.parametro);
+			reply.esito=1;
+			if (sendto(state->s,(void *)&reply, sizeof(struct frame), 0, (struct sockaddr *)&state->remote_sin, remote_sinlen)<0){
+				perror("\n Transmission failed in send procedure: process ended   \n");
     				exit(1);
-			}	
+			}
   			exit(1);
  		}
 	}
-		
-					
-	/* -----------------------------------------------------*		
-	 * invia risposta al client con esito positivo e	*
-         * contenente la porta del processo figlio  		*
-	 * -----------------------------------------------------*/
-
+	// sending response to client with chid port
 	reply.esito=0;
 	if (sendto(state->s, (void *)&reply, sizeof(struct frame), 0, (struct sockaddr *)&state->remote_sin, remote_sinlen)<0){
-		perror("Trasmissione fallita in procedura send : esco dal processo   \n");
+		perror("\n Transmission failed in send procedure: process ended   \n");
     		exit(1);
 	}
-	
-	/* -----------------------------------------------------*		
-	 * Attesa del comando start e arresto del processo	*
- 	 * qualora non arrivi entro il tempo massimo impostato	*
-	 * -----------------------------------------------------*/
-		
-	while(1){									
+
+	// waiting for START command
+	while(1){
 		TMaxS.tv_sec = TMax_sec;
 		TMaxS.tv_usec = 0;
 		FD_ZERO(&rset);
-        	FD_SET(state->s, &rset);
-       		maxfdp = state->s+1;
+        FD_SET(state->s, &rset);
+       	maxfdp = state->s+1;
 		int n=select(maxfdp, &rset, NULL, NULL, &TMaxS);
 		if(n==0){
-			printf("     figlio %d : Tempo massimo attesa START superato, termino il processo \n", getpid());
+			printf("\n Child %d : START waiting time exceeded, I quit the process \n", getpid());
 			exit(EXIT_FAILURE);
-		}	
-		if (FD_ISSET(state->s, &rset)){									
+		}
+		if (FD_ISSET(state->s, &rset)){
 	 		int l=recvfrom(state->s,(void *)&request, sizeof(struct frame), 0, (struct sockaddr *)&state->remote_sin, &remote_sinlen);
-			if (l <= 0)		
+			if (l <= 0)
 				continue;
 			else break;
 		}
-	}						              		 	    
+	}
 	if  (request.type!=START){
-		printf("non ricevuto comando START Non posso iniziare la trasmissione Esco dal processo \n");
+		printf("\n START command not received, can't start transmission, I quit the process \n");
 		exit(EXIT_FAILURE);
 	}
-	
-      	        				
-	//inizia la trasmissione 				
-	trasmetti(state);
+	transmit(state);
 }
 
 /************************************************************************************************
- * Main:											*
- *  - Legge file di configurazione ed imposta parametri    					*
- *  - Imposta indirizzo server e crea socket							*
- *  - Ciclo while: attende un messaggio da client (se msg non è di tipo CMD ignora e torna	*
- *    in attesa), se istruzione trm il processo termina. Altrimenti crea un processo figlio	*
- *    e torna in attesa di nuovi messaggi.							*
- *    il figlio:										*
- *  - Imposta indirizzo del processo figlio e crea una socket					*
- *  - Se istruzione get o list chiama la procedura srv_trasm, se put chiama srv_ric.		*  
- ************************************************************************************************/
+ * main *
+************************************************************************************************/
 
-int main(int argc,char *argv[])
-{
-int l;
-struct sockaddr_in filesrvaddr;
-struct frame request;  	 
-struct send_file_args *state;
+int main(int argc,char *argv[]){
 
-	//Inizializzazione mutex per accesso a variabili globali
+    int l;
+    struct sockaddr_in filesrvaddr;
+    struct frame request;
+    struct send_file_args *state;
+
+	//Inizialize mutex to global variable access
 	int rc = pthread_mutex_init(&mtx1,NULL);
 	if (rc !=0){
-   		 fprintf(stderr,"********* Errore in fase di inizializzazione mutex \n");
+   		 fprintf(stderr," *** Error in mutex initialization phase \n");
    	 	 return EXIT_FAILURE;
-	} 
+	}
 	rc = pthread_mutex_init(&mtx1,NULL);
 	if (rc !=0){
-		fprintf(stderr,"********* Errore in fase di inizializzazione mutex \n");
-   	 	 return EXIT_FAILURE;
-	} 
-	
+		fprintf(stderr," *** Error in mutex initialization phase \n");
+        return EXIT_FAILURE;
+	}
 
-
-	/* ----------------------------------------------------------------*
-	 * impostazione dei parametri di configurazione e del file di log  *
- 	 * ----------------------------------------------------------------*/
-   
-     	l=leggi_conf(argc,argv,&cfg);
-     	if (l==1){
-		fprintf(stderr,"********* Errore in fase di inizializzazione ,\n");
+    //setting configuration parameters and log file
+    l=read_config(argc,argv,&cfg);
+    if (l==1){
+		fprintf(stderr," *** Error in initialization phase \n");
    		return EXIT_FAILURE;
-	} 
+	}
+   	// parameters struct allocation
+   	state = (struct send_file_args*) malloc(sizeof(struct send_file_args));
 
-     	// Alloca la struct per i parametri
-     	state = (struct send_file_args*) malloc(sizeof(struct send_file_args));
+   	state->lar = 0;
+   	state->lfs = 0;
+   	state->sws = cfg.sws;
+  	state->seq_max = cfg.seq_max;
+  	state->f_dest=NULL;
+   	state->f_src=NULL;
+  	state->path=NULL;
 
-     	// Inizializzazione degli altri parametri
-    	state->lar = 0;
-     	state->lfs = 0;
-     	state->sws = cfg.sws;
-    	state->seq_max = cfg.seq_max;
-    	state->f_dest=NULL;
-     	state->f_src=NULL;
-    	state->path=NULL;
-							
-
-	/* -----------------------------------*
-	 * impostazione indirizzo del server  *
-	 * -----------------------------------*/
-	
+    // setting server address
    	memset(&filesrvaddr,0,sizeof(filesrvaddr));
-	
-    	filesrvaddr.sin_family=AF_INET;
-     	filesrvaddr.sin_port=htons(cfg.srv_port);
-     	filesrvaddr.sin_addr.s_addr = htonl(INADDR_ANY);
-    
-    
-    	 /* --------------------------------------*
-	  * apertura  della socket processo padre *          
-          *---------------------------------------*/
 
-    	int filelistenfd=socket(AF_INET,SOCK_DGRAM,0);
+    filesrvaddr.sin_family=AF_INET;
+    filesrvaddr.sin_port=htons(cfg.srv_port);
+    filesrvaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+
+    // opening parent socket
+    int filelistenfd=socket(AF_INET,SOCK_DGRAM,0);
 	if (filelistenfd < 0 ){
-		printf("creazione della socket fallita - processo server terminato \n");
+		printf("\n *** Failure socket creation - server process ended \n");
 		return EXIT_FAILURE;
 	}
-	
+
 	if (bind(filelistenfd, (struct sockaddr *)&filesrvaddr,sizeof(filesrvaddr))<0){
-		printf("fallita Bind\n");
-        	return 0;
+		printf(" Bind failure \n");
+       	return 0;
 	}
 
-	/* ---------------------------------------------*
-	 * impostazione struttura indirizzo del client  *
-	 * ---------------------------------------------*/
-
+	// setting client address
 	socklen_t remote_sinlen=sizeof(state->remote_sin);
 	memset(&state->remote_sin,0,sizeof(state->remote_sin));
-	
+
 
 	for (;;){
-		/*  ------------------------------------*
-		 *  Attesa e gestione msg dal client    *
-		 *  ------------------------------------*/
-	
-		printf("In attesa di ricevere un comando dal client :\n");
+		// management of client message
+		printf(" Waiting for client command ... \n");
 		recvfrom(filelistenfd,(void *)&request, sizeof(struct frame), 0, (struct sockaddr *)&state->remote_sin, &remote_sinlen);
-		//gestire uscita in caso di errore nell'istruzione		
-		if  (request.type!=CMD){	
-			printf("padre %u : tipo richiesta sconosciuto\n",getpid());
-			continue;	
-		}
-		//arresto del processo server in caso di comando 'trm'
-		if (strcmp(request.istruz, "trm")==0){
-			printf("padre %u : ricevuto comando di arresto del server \n",getpid());
-			break;	
-		}
 
-		/* ----------------------------*
-		 * creazione processo figlio   *
-		 * ----------------------------*/
-		
+		if  (request.type!=CMD){
+			printf(" Parent %u : unknown request type \n",getpid());
+			continue;
+		}
+		if (strcmp(request.istruz, "stop")==0){
+			printf(" Parent %u : received server termination command \n",getpid());
+			break;
+		}
+        // child process creation
 		pid_t pid=fork();
-		if(pid == 0){		
-			/* ------------------------------------------*
-			 * Apertura socket processo figlio e Bind    *
-			 * ------------------------------------------*/
-
+		if(pid == 0){
 			state->s=socket(AF_INET,SOCK_DGRAM,0);
 			if (state->s < 0){
-				printf("creazione della socket processo figlio fallita, esco dal processo  \n");
+				printf(" Creation of child socket failed: I quit the process \n");
 				exit(EXIT_FAILURE);
 			}
- 
-
 			memset(&state->local_sin,0,sizeof(state->local_sin));
-     			state->local_sin.sin_family=AF_INET;
-    			state->local_sin.sin_addr.s_addr = htonl(INADDR_ANY);			
-		
+   			state->local_sin.sin_family=AF_INET;
+   			state->local_sin.sin_addr.s_addr = htonl(INADDR_ANY);
+
 			if (bind(state->s, (struct sockaddr *)&state->local_sin,sizeof(state->local_sin))<0){
-				printf("bind processo figlio  fallita, esco dal processo \n");
-				exit(EXIT_FAILURE);	
-        		}
-							
-			// estrazione indirizzo da associare alla socket processo figlio
-								
+				printf(" Bind failure: process ended \n");
+				exit(EXIT_FAILURE);
+            }
+
+			// child socket address
 			socklen_t local_sinlen=sizeof(state->local_sin);
-			getsockname(state->s,(struct sockaddr *)&state->local_sin,&local_sinlen);		
-										
-			// completa informazioni  sulla struct state 
+			getsockname(state->s,(struct sockaddr *)&state->local_sin,&local_sinlen);
+
 			strncpy(state->istruz,request.istruz,5);
 
-			/* -------------------------------------------*		
-			 * gestione del comando ricevuto dal client   *
-			 * -------------------------------------------*/
-					
-			if ((strcmp(request.istruz, "get")==0) || (strcmp(request.istruz, "list")==0))					
-				srv_trasm(state,request);    //Richiama procedura di trasmissione
+			// management of client command
+
+			if ((strcmp(request.istruz, "get")==0) || (strcmp(request.istruz, "list")==0))
+				srv_trasm(state,request);
 			else
-				srv_ric(state,request); // richiama procedura di ricezione 
+				srv_ric(state,request);
 
-			// esci dal processo figlio 
 			exit(0);
-		}			
-  		/*else{
-			int status;
-			waitpid(pid,&status,WNOHANG);
-		}*/
+		}
 
-	}  // end for
+	}
 
-    	close(filelistenfd);
+    close(filelistenfd);
 	if (fclose(flog)!=0){
-		perror("Errore nella chiusura del file di log, esco dal processo \n");
-     		exit(1);
+		perror(" Error closing log file, process ended \n");
+     	exit(1);
 	}
 	return 0;
 }
