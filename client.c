@@ -227,7 +227,7 @@ int main(int argc,char *argv[]){
                 }
             }
             else if  (strcmp(com.istruz, "stop")==0)
-                printf(" Command to stop the server  \n ");
+                printf("--> Command to stop the server  \n ");
                 else{
                     fprintf(stderr,  " *** Unmanaged command - process ended \n");
                     exit(1);
@@ -235,7 +235,7 @@ int main(int argc,char *argv[]){
             //start socket for a connectionless protocol
             state->s=socket(AF_INET,SOCK_DGRAM,0); // int socket(int domain,int type,int protocol)
             if (state->s < 0){
-                printf("\n Failure of socket creation - process ended \n");
+                printf(" *** Failure of socket creation - process ended \n");
                 exit(EXIT_FAILURE);
             }
             // extracting the client address assigned by the kernel
@@ -244,7 +244,7 @@ int main(int argc,char *argv[]){
 
             // bind to associate socket and local port/address
             if (bind(state->s, (struct sockaddr *)&state->local_sin, sizeof(state->local_sin))<0){
-                printf("\n *** Bind failure: process ended \n");
+                printf("\n *** Bind failure - process ended \n");
                 exit(EXIT_FAILURE);
             }
 
@@ -252,7 +252,7 @@ int main(int argc,char *argv[]){
             socklen_t srvaddrlen=sizeof(srvaddr);
 
             if (sendto(state->s, (void *)&msg, sizeof(struct frame), 0, (struct sockaddr *)&srvaddr, srvaddrlen)<0){
-                perror("\n *** Transmission failure: process ended \n");
+                perror("\n *** Transmission failure - process ended \n");
                 exit(1);
             }
 
@@ -272,7 +272,7 @@ int main(int argc,char *argv[]){
                 maxfdp = state->s+1;
                 int n=select(maxfdp, &rset, NULL, NULL, &TMaxS);
                 if(n==0){
-                    printf("\n\t      Process %d : the server is not responding, process ended \n", getpid());
+                    printf("\n\t *** Process %d : the server is not responding - process ended \n", getpid());
                     exit(EXIT_FAILURE);
                 }
 
@@ -287,13 +287,13 @@ int main(int argc,char *argv[]){
 
             // check the outcome of client request
             if (reply.type!=ACK){
-                printf("\n\t        Process %d  error: expected ACK message - process ended\n",getpid());
+                printf("\n\t *** Process %d  error: expected ACK message - process ended\n",getpid());
                 exit(EXIT_FAILURE);
             }
 
             if (reply.esito!=0){
 				// server encountered problems; stop child process to prevent zombies from forming
-				printf("\n\t        Process %d  error: server encountered problems in command elaboration - process ended\n",getpid());
+				printf("\n\t *** Process %d  error : server encountered problems in command elaboration - process ended\n",getpid());
                 exit(EXIT_FAILURE);
             }
 
@@ -311,7 +311,7 @@ int main(int argc,char *argv[]){
                 msg.type=START;
 
                 if (sendto(state->s, (void *)&msg, sizeof(struct frame), 0, (struct sockaddr *)&state->remote_sin, remote_sinlen)<0){
-					perror("\n *** Transmission failure: process ended \n");
+					perror("\n *** Transmission failure - process ended \n");
                     exit(1);
                 }
                 receive(state); // receiving procedure on client

@@ -109,7 +109,7 @@ struct rtt_info {
   float		rtt_rttvar;	    // weighted mean deviance MSDEV
   float		rtt_rto;	    // current value of RTO
   int		rtt_nrexmt;	    // max number of frame retransmission
-  uint32_t	rtt_base;	    // transmission start time in milliseconds elapsed since 1/1/1970
+  uint32_t	rtt_base;	    // transmission start time in milliseconds
 };
 
 static struct rtt_info rttinfo; // RTO managment variable
@@ -172,7 +172,7 @@ int read_config(int argc, char *argv[],struct config *cfg){
         return (1);
     }
 	fprintf(flog,"Configuration file: %s \n",file_conf);
-	fprintf(flog,"Parameters values \n");
+	fprintf(flog,"\nParameters values: \n");
 
 	// set configuration parameters
 
@@ -194,7 +194,7 @@ int read_config(int argc, char *argv[],struct config *cfg){
 	p = fgets(linea,max_line,fc);
     cfg->tip_RTO = strtoul(linea,&p,10);
 	fprintf(flog,"%s",linea);
-     	printf(" RTO type: %d \n",cfg->tip_RTO);
+    printf(" RTO type: %d \n",cfg->tip_RTO);
 
 	p = fgets(linea,max_line,fc);
     cfg->RTO_in = strtoul(linea,&p,10);
@@ -239,13 +239,13 @@ int read_config(int argc, char *argv[],struct config *cfg){
 	p = fgets(linea,max_line,fc);
     cfg->coef_RTD = strtoul(linea,&p,10);
 	fprintf(flog,"%s",linea);
-    printf(" Multiplicative coefficient of delay: %d \n",cfg->coef_RTD);
+    printf(" Multiplicative coefficient of delay: %d \n\n",cfg->coef_RTD);
 
 	if (fclose(fc) != 0){
-		perror(" Error closing configuration file - read_config procedure, I exit the process \n");
+		perror(" *** Error closing configuration file - read_config procedure, I exit the process \n");
      	exit(1);
 	}
-	printf("\n **************************************************************\n\n");
+	printf(" **************************************************************\n\n");
 	return (0);
 }
 
@@ -317,7 +317,7 @@ void rtt_print(struct rtt_info *ptr){
 	if (rtt_d_flag == 0){
 		return;
 	}
-   	fprintf(flog, "rtt = %.3f, srtt = %.3f, rttvar = %.3f  \n",
+   	fprintf(flog, "rtt = %.3f,      srtt = %.3f,        rttvar = %.3f  \n",
 	ptr->rtt_rtt, ptr->rtt_srtt, ptr->rtt_rttvar);
 }
 
@@ -373,7 +373,7 @@ int read_frame(FILE *fp, struct frame* f, seqnum_t seq){
   	f->type = DATA;
   	f->eof_pos = -1;
 
-  	fprintf(flog," in proc. readframe Read from file: %d \n",seq);
+  	fprintf(flog,"       IN READ_FRAME --> Read from file %d \n",seq);
 
   	for(i = 0; i < DATA_SIZE; i++){
   		f->data[i] = fgetc(fp);
@@ -395,7 +395,7 @@ int write_frame(FILE *fp, struct frame *f){
     int num_bytes;
     int retval;
 
-  	fprintf(flog, " in proc. write_frame Write on file_\n");
+  	fprintf(flog, "       IN WRITE_FRAME --> Write on file \n");
 
   	if(f->eof_pos < 0){
         num_bytes = DATA_SIZE;
@@ -453,7 +453,7 @@ void* timeout(void *args){
 			int coef= pow(2,i);
 			if (coef > COEF_MAX)
 				coef=COEF_MAX; // set max value of RTO
-			local_timeout=init_timeout*coef; //associate with each packet RTO right value at first retransmission
+            local_timeout=init_timeout*coef; //associate with each packet RTO right value at first retransmission
 		}
 		usleep(local_timeout); //thread waits amount of time previously calculated if tip_RTO = 0
 
@@ -470,20 +470,21 @@ void* timeout(void *args){
    		 	fprintf(stderr," *** Error unlocking mutex \n");
    	 		exit(1);
 	 	}
+
 		// random on losing probability set in configuration params
 		int x=rand()%100+1;
  		if (x > cfg.prob) {
 		 	// not lost packet
-            fprintf(flog,"==>%d Repeated frame with sequence number RIP %d  t= %u repeated %d RTO = %.3f \n",i,params->frame->seq,params->frame->time_trasm,params->frame->ripet,local_timeout/1000);
+            fprintf(flog,"--> %d Repeated frame with sequence number        RIP %d         t = %u         repeated = %d       RTO = %.3f \n",i,params->frame->seq,params->frame->time_trasm,params->frame->ripet,local_timeout/1000);
 			//send to sends data to another socket, server process socket
    			if(sendto(params->s, (char*) params->frame, sizeof(struct frame), 0, (struct sockaddr *) &(params->remote_sin), sizeof(params->remote_sin) ) < 0){
-                perror(" Transmission failed in Timeout procedure: I quit the process\n");
+                perror(" *** Transmission failed in Timeout procedure : process ended \n\n");
       			exit(1);
             }
 		}
 		else{
 		 	// lost packet
-			fprintf(flog," %d Lost frame repeated with sequence number PRP %d  t= %u repeated %d RTO = %.3f \n",i,params->frame->seq,params->frame->time_trasm,params->frame->ripet,local_timeout/1000);
+			fprintf(flog,"    %d Lost frame repeated with sequence number    PRP %d         t = %u         repeated = %d       RTO = %.3f \n",i,params->frame->seq,params->frame->time_trasm,params->frame->ripet,local_timeout/1000);
 			// increment of the number of lost retransmissions counter
 			// semaphore controls access to the tot_lost_rep_frame global variable (updated by all running timeout threads)
 			rc=pthread_mutex_lock(&mtx2);
@@ -500,8 +501,8 @@ void* timeout(void *args){
 		}
 	} // endfor
 
-    fprintf(flog," Exceeded maximum number of retransmissions in Timeout procedure - I exit the process\n ");
-	printf(" Exceeded maximum number of retransmissions in Timeout procedure - I exit the process\n ");
+    fprintf(flog,"       Exceeded maximum number of retransmissions in Timeout procedure : process ended \n\n");
+	printf(" *** Exceeded maximum number of retransmissions in Timeout procedure : process ended \n\n ");
     exit(1);
  	return NULL;
 }
@@ -525,19 +526,19 @@ void* send_data(void *args){
 
     printf("\n\t Process %d - Transfer in progress: file/dir %s \n",getpid(),state->file_name);
   	RTO=cfg.RTO_in;
-  	fprintf(flog," Starting value RTO = %.3f \n", RTO);
+  	fprintf(flog,"\n       Starting value RTO = %.3f \n", RTO);
 
   	while(1){
         // Next sequence number expected
         send_seqnum = (state->lfs + 1) % state->seq_max;
 
-    	// Check that it's possible to send the frame, if it's not the thread releases the CPU.
+    	// Check that it's possible to send the frame, if it's not, the thread releases the CPU.
     	if(!seq_check(((state->lar)+1) % state->seq_max, state->sws, send_seqnum, state->seq_max)){
 			if (send_seqnum != last_frame_fs){
-				fprintf(flog,"\n Frame out of sequence  %d \n ", send_seqnum);
+				fprintf(flog,"\n       Frame out of sequence %d \n ", send_seqnum);
 
 				int winsup= (state->lar + state->sws)%state->seq_max;
-				fprintf(flog," Winbase window = %d; winlast= %d \n ",(state->lar+1)%state->seq_max,winsup);
+				fprintf(flog,"       Window   winbase = %d;   winlast = %d \n ",(state->lar+1)%state->seq_max,winsup);
 				tot_frame_fs++;
 				last_frame_fs=send_seqnum;
             }
@@ -568,20 +569,20 @@ void* send_data(void *args){
 
 		if (ret!=0){
 			perror(" *** Error pthread attr_init");
-			printf("\n Computer resources don't support files of this size - process ended\n");
+			printf("\n Computer resources don't support files of this size : process ended\n");
 			exit(1);
         }
 		ret = pthread_attr_setstacksize(&tattr,t_size);
 		if (ret!=0){
 			perror(" *** Error pthread attr_setstacksize");
-			printf("\n Computer resources don't support files of this size - process ended\n");
+			printf("\n Computer resources don't support files of this size : process ended\n");
 			exit(1);
 		}
 		// creating timeout thread (for frames transmission)
         int r = pthread_create(&(state->frame_buf[i].timeout), &tattr, timeout, &(state->frame_buf[i].timeout_state));
      	if (r!=0){
 			perror(" *** Error pthread create - timeout");
-			printf("\n Computer resources don't support files of this size - process ended\n");
+			printf("\n Computer resources don't support files of this size : process ended\n");
 			exit(1);
         }
 
@@ -594,7 +595,7 @@ void* send_data(void *args){
      	state->frame_buf[i].send_frame.ripet = 0; //first time, never repeated
      	state->frame_buf[i].send_frame.time_trasm = t_trasm;
 
-     	fprintf(flog," Transmitted frame with sequence number TX   %d  t= %u , repeated= %d \n",send_seqnum,t_trasm,state->frame_buf[i].send_frame.ripet);
+     	fprintf(flog,"       Transmitted frame with sequence number     TX %d          t = %u         repeated = %d \n",send_seqnum,t_trasm,state->frame_buf[i].send_frame.ripet);
 
      	// Transmits the current frame by simulating the loss with probability prob
     	int x=rand()%100+1;
@@ -602,13 +603,13 @@ void* send_data(void *args){
 
   		if (x >= cfg.prob) {
 			if(sendto(state->s, (char*) &(state->frame_buf[i].send_frame), sizeof(struct frame), 0, (struct sockaddr *) &(state->remote_sin), sizeof(state->remote_sin) ) < 0){
-                perror(" Fail transmission in send procedure : exit from process   \n");
+                perror(" *** Fail transmission in send procedure : exit from process   \n");
                 exit(1);
 			}
 		}
    	  	else{
 			tot_lost_frame++; // increase number of frames transmitted but lost on first transmission
-			fprintf(flog," frame lost in transmission TxPersa %d \n", state->lfs);
+			fprintf(flog,"       Frame lost in transmission                 TxLost %d \n", state->lfs);
         }
 
         if(got_eof ==1)
@@ -619,7 +620,7 @@ void* send_data(void *args){
 		state->f_src = NULL;
     }
 
-  	fprintf(flog,"OUT SEND_DATA \n");
+  	fprintf(flog,"       OUT SEND_DATA \n");
   	return NULL;
 }
 
@@ -651,7 +652,7 @@ void* wait_ack(void *args){
 
 		// if receiver sends END message, the thread ends
 		if  (ack_frame.type==END){
-		   	fprintf(flog," Received END command, end of listen procedure \n");
+		   	fprintf(flog,"       Received END command, end of listen procedure \n");
 		  	break;
         }
 
@@ -662,16 +663,17 @@ void* wait_ack(void *args){
 		int x=rand()%100+1;
    		if (x <= cfg.prob) {
 			tot_lost_ack++;
-			fprintf(flog,"<<ACK lost before of receiving NoAck %d \n", ack_frame.seq);
+			fprintf(flog,"   >>> ACK lost before of receiving               NoAck %d \n", ack_frame.seq);
 	 		continue;
 	  	}
    		// frame already acked
    	 	if(state->frame_buf[ack_seq % BUF_SIZE].has_ack == 1){
-            fprintf(flog,"\n Received ACK with sequence number	ACK  %d trasm= %u , repeated= %d  \n",ack_seq,ack_frame.time_trasm,ack_frame.ripet);
+
+            fprintf(flog,"       Received ACK with sequence number          ACK %d         trasm = %u     repeated = %d  \n",ack_seq,ack_frame.time_trasm,ack_frame.ripet);
             continue;
    		}
 		if(state->frame_buf[ack_seq % BUF_SIZE].has_ack == 2){
-			fprintf(flog,"\n Received ACK with sequence number	ACK  %d trasm= %u , repeated= %d  \n",ack_seq,ack_frame.time_trasm,ack_frame.ripet);
+			fprintf(flog,"       Received ACK with sequence number          ACK %d         trasm = %u     repeated = %d  \n",ack_seq,ack_frame.time_trasm,ack_frame.ripet);
            	continue;
    		}
 
@@ -686,14 +688,14 @@ void* wait_ack(void *args){
 		}
 	  	RTD=RTD*(1+cfg.coef_RTD*1.0/100);
 
-        fprintf(flog,"\n Received ACK with sequence number ACK  %d trasm= %u , repeated= %d  \n",ack_seq,ack_frame.time_trasm,ack_frame.ripet);
+        fprintf(flog,"       Received ACK with sequence number          ACK %d         trasm = %u     repeated = %d  \n",ack_seq,ack_frame.time_trasm,ack_frame.ripet);
 
 	 	// RTO update, only if it's not a retransmission
   	 	if (ack_frame.ripet==0){
-			fprintf(flog," Transmitted  %u, Received %u, Delay %u \n",t_trasm,t_cor, t_rit);
+			fprintf(flog,"     > Transmitted %u \n     > Received %u \n     > Delay %u \n",t_trasm,t_cor, t_rit);
 			RTO=rtt_calc( &rttinfo,t_rit);
   			rtt_print(&rttinfo);
-  			fprintf(flog," New value of RTO = %.3f \n", RTO);
+  			fprintf(flog,"       New value of RTO = %.3f \n", RTO);
 	  	};
 
         // management of sliding window
@@ -701,7 +703,7 @@ void* wait_ack(void *args){
 	 	seqnum_t nfe = ((state->lar) + 1) % state->seq_max; // next frame  expected
 
 	 	// delete timeout thread related on acked frame
-	 	fprintf(flog," Delete thread num_seq CANCT %d \n", ack_frame.seq);
+	 	fprintf(flog,"       Delete thread num_seq                      CANCT %d \n", ack_frame.seq);
    	 	pthread_cancel(state->frame_buf[ack_seq % BUF_SIZE].timeout);
 	 	usleep(1000);
 
@@ -713,13 +715,13 @@ void* wait_ack(void *args){
      			state->lar = ((state->lar)+1) % state->seq_max;
      			nfe = ((state->lar) + 1) % state->seq_max;
 		 	int winsup= (nfe+state->sws-1)%state->seq_max;
-		        fprintf(flog,"... New winbase window = %d; winlast= %d \n ",nfe,winsup);
+		        fprintf(flog,"   ... New window   winbase = %d;   winlast = %d \n ",nfe,winsup);
     	}
 		// thread break when last ack is received
    		if(got_eof)
 			break;
 	}
-  	fprintf(flog,"OUT WAIT_ACK \n");
+  	fprintf(flog,"       OUT WAIT_ACK \n");
   	return NULL;
 }
 
@@ -736,7 +738,7 @@ void transmit(struct send_file_args *state){
 
 	rtt_init(&rttinfo);
   	t_cor=rtt_ts(&rttinfo);
-   	fprintf(flog," Start process time %u \n",t_cor);
+   	fprintf(flog,"       Start process time %u \n",t_cor);
   	rtt_print(&rttinfo);
 
 	r = pthread_create(&send_thread, NULL, send_data, (void*) state);
@@ -756,20 +758,20 @@ void transmit(struct send_file_args *state){
  	pthread_join(ack_thread, NULL);
 
 	// writes summary data to the log file
-	fprintf(flog, "================================================================================================================= \n");
-	fprintf(flog, "TRANSMISSION STATS \n ");
-	fprintf(flog, "total frame                            : %d  \n ", tot_frame);
-	fprintf(flog, "  of which lost at first transmission  : %d  \n ", tot_lost_frame);
-	fprintf(flog, "repeated frame                         : %d  \n ", tot_frame_rip);
-	fprintf(flog, "  of which lost                        : %d  \n ", tot_lost_rep_frame);
-	fprintf(flog, "ack product (remotely)                 : %d  \n ", tot_ack);
-	fprintf(flog, "  of which lost                        : %d  \n ", tot_lost_ack);
-	fprintf(flog, "frame out of sequence                  : %d  \n ", tot_frame_fs);
-	fprintf(flog, "duration of the process                : %u  \n ", rtt_ts(&rttinfo));
+	fprintf(flog, "\n ================================================================================================================ \n");
+	fprintf(flog, " TRANSMISSION STATS \n ");
+	fprintf(flog, " total frame                            : %d  \n ", tot_frame);
+	fprintf(flog, "   of which lost at first transmission  : %d  \n ", tot_lost_frame);
+	fprintf(flog, " repeated frame                         : %d  \n ", tot_frame_rip);
+	fprintf(flog, "   of which lost                        : %d  \n ", tot_lost_rep_frame);
+	fprintf(flog, " ack product (remotely)                 : %d  \n ", tot_ack);
+	fprintf(flog, "   of which lost                        : %d  \n ", tot_lost_ack);
+	fprintf(flog, " frame out of sequence                  : %d  \n ", tot_frame_fs);
+	fprintf(flog, " duration of the process                : %u  \n ", rtt_ts(&rttinfo));
 	fprintf(flog, "================================================================================================================= \n\n");
 
 	printf("\t Process %d - Transfered file/dir: %s\n ",getpid(),state->file_name);
-	printf("/n Enter a command: >> ");
+	printf("\n Enter a command: >> ");
 }
 
 void receive(struct send_file_args *state){
@@ -782,12 +784,12 @@ void receive(struct send_file_args *state){
     uint32_t t_cor;
 
 	printf("\n\t Process %d - Reception in progress: file/dir %s \n",getpid(),state->new_filename);
-	fprintf(flog,"IN RECEIVE \n");
+	fprintf(flog,"       IN RECEIVE \n");
 
 	// initialize reception process start time
 	rtt_init(&rttinfo);
   	t_cor=rtt_ts(&rttinfo);
-   	fprintf(flog," Starting time process %u \n",t_cor);
+   	fprintf(flog,"\n       Starting time process %u \n",t_cor);
 
 	socklen_t   remote_sinlen=sizeof(state->remote_sin);
 
@@ -798,7 +800,7 @@ void receive(struct send_file_args *state){
 	while(1){
 		while(1){
 			// waiting for a frame arrive
-			fprintf(flog, " t= %d  waiting for a frame arrive \n",rtt_ts(&rttinfo));
+			fprintf(flog, "t= %d :\n       Waiting for a frame arrive \n",rtt_ts(&rttinfo));
 			TMax.tv_sec = cfg.t_max;
 			TMax.tv_usec = 0;
 			FD_ZERO(&rset);
@@ -807,7 +809,7 @@ void receive(struct send_file_args *state){
 
 			int n=select(maxfdp, &rset, NULL, NULL, &TMax);
 			if(n==0){
-				fprintf(flog," t = %d maximum waiting time exceeded \n",rtt_ts(&rttinfo));
+				fprintf(flog,"t= %d :\n       Maximum waiting time exceeded \n",rtt_ts(&rttinfo));
 				printf("\n Child %d : maximum waiting time exceeded - end of process \n", getpid());
 				exit(EXIT_FAILURE);
 			}
@@ -821,8 +823,8 @@ void receive(struct send_file_args *state){
 			}
 		}//second while ended
 
-		fprintf(flog,"t= %d :",rtt_ts(&rttinfo));
-		fprintf(flog,"\n Received frame with sequence number =  %d \n",frame.seq);
+		fprintf(flog,"t= %d :\n",rtt_ts(&rttinfo));
+		fprintf(flog,"       Received frame with sequence number        %d \n",frame.seq);
         ric_tot_frame_pv++;
 
     	ack_frame.type = ACK;
@@ -832,16 +834,16 @@ void receive(struct send_file_args *state){
 
         // sending ack for each frame
 		if(sendto(state->s, (char*) &ack_frame, sizeof(struct ack), 0,(struct sockaddr *) &state->remote_sin, sizeof(state->remote_sin))< 0){
-            perror(" Transmission failed in receive procedure - end of process\n");
+            perror(" *** Transmission failed in receive procedure - end of process\n");
     		exit(1);
   		}
-		fprintf(flog," ACK sent with sequence number =  %d \n",ack_frame.seq);
+		fprintf(flog,"       ACK sent with sequence number              %d \n",ack_frame.seq);
 
   		if(!seq_check((state->lar+1) % state->seq_max, state->sws, frame.seq, state->seq_max)){
 			if (frame.seq != last_frame_fs){
-				fprintf(flog," Received frame out of sequence  %d \n ", frame.seq); //frame out of sequence
+				fprintf(flog,"       Received frame out of sequence             %d \n", frame.seq); //frame out of sequence
 				int winsup= (state->lar + state->sws)%state->seq_max;
-				fprintf(flog," Winbase window = %d; winlast= %d \n ",(state->lar+1)%state->seq_max,winsup);
+				fprintf(flog,"   ... Window   winbase = %d;   winlast = %d \n\n ",(state->lar+1)%state->seq_max,winsup);
 				ric_tot_frame_fs++;
 				last_frame_fs=frame.seq;
     		}
@@ -867,7 +869,7 @@ void receive(struct send_file_args *state){
     		}while(frame_buf[((state->lar+1)%state->seq_max)%BUF_SIZE].type == DATA);
 
    			int winsup= (state->lar+1+state->sws-1)%state->seq_max;
-			fprintf(flog,".... New winbase window = %d; winlast = %d \n \n",state->lar+1,winsup);
+			fprintf(flog,"   ... New window   winbase = %d;   winlast = %d \n \n",state->lar+1,winsup);
 		}
 
      	if(got_eof == 1){
@@ -877,13 +879,13 @@ void receive(struct send_file_args *state){
     		}
             if ((strcmp(state->istruz, "get")==0)){
                 printf("\t Process %d - Received file: %s \n",getpid(),state->new_filename);
-                printf("/n Enter a command: >> ");
+                printf("\n Enter a command: >> ");
                 break;
             }
             else {
                 printf(" DIRECTORY CONTENT:  \n ");
                 printf(" --> %s \n ", state->path);
-                printf("/n Enter a command: >> ");
+                printf("\n Enter a command: >> ");
                 break;
             }
   		}
@@ -892,14 +894,14 @@ void receive(struct send_file_args *state){
 	// message of end reception
 	ack_frame.type = END;
 	if(sendto(state->s, (char*) &ack_frame, sizeof(struct ack), 0,(struct sockaddr *) &state->remote_sin, sizeof(state->remote_sin))< 0){
-   		perror(" Transmission failed in receive procedure - end of process \n");
+   		perror(" *** Transmission failed in receive procedure - end of process \n");
  		exit(1);
   	}
-	fprintf(flog,"================================================================================================================= \n");
-	fprintf(flog,"RECEPTION STATS \n ");
-	fprintf(flog,"total received frames/ transmitted ack  : %d \n ", ric_tot_frame_pv);
-	fprintf(flog,"frames out of sequence                  : %d \n ", ric_tot_frame_fs);
-	fprintf(flog,"total number of written frames          : %d \n ", ric_tot_frame);
+	fprintf(flog,"\n ================================================================================================================ \n");
+	fprintf(flog,"  RECEPTION STATS \n ");
+	fprintf(flog,"  total received frames/ transmitted ack  : %d \n ", ric_tot_frame_pv);
+	fprintf(flog,"  frames out of sequence                  : %d \n ", ric_tot_frame_fs);
+	fprintf(flog,"  total number of written frames          : %d \n ", ric_tot_frame);
 	fprintf(flog,"================================================================================================================= \n\n");
 }
 
