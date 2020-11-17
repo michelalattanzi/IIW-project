@@ -526,7 +526,7 @@ void* send_data(void *args){
 
     printf("\n\t Process %d - Transfer in progress: file/dir %s \n",getpid(),state->file_name);
   	RTO=cfg.RTO_in;
-  	fprintf(flog,"\n       Starting value RTO = %.3f \n", RTO);
+  	fprintf(flog,"       Starting value RTO = %.3f \n", RTO);
 
   	while(1){
         // Next sequence number expected
@@ -738,7 +738,7 @@ void transmit(struct send_file_args *state){
 
 	rtt_init(&rttinfo);
   	t_cor=rtt_ts(&rttinfo);
-   	fprintf(flog,"       Start process time %u \n",t_cor);
+   	fprintf(flog,"\n       Start process time %u \n",t_cor);
   	rtt_print(&rttinfo);
 
 	r = pthread_create(&send_thread, NULL, send_data, (void*) state);
@@ -771,7 +771,7 @@ void transmit(struct send_file_args *state){
 	fprintf(flog, "================================================================================================================= \n\n");
 
 	printf("\t Process %d - Transfered file/dir: %s\n ",getpid(),state->file_name);
-	printf("\n Enter a command: >> ");
+
 }
 
 void receive(struct send_file_args *state){
@@ -882,10 +882,9 @@ void receive(struct send_file_args *state){
                 printf("\n Enter a command: >> ");
                 break;
             }
-            else {
+            if ((strcmp(state->istruz, "list")==0)){
                 printf(" DIRECTORY CONTENT:  \n ");
                 printf(" --> %s \n ", state->path);
-                printf("\n Enter a command: >> ");
                 break;
             }
   		}

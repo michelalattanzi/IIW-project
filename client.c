@@ -95,14 +95,16 @@ int read_cmd(struct cmd_s *cmd){
             strncpy(cmd->file_src,newString[1],DIM_NOMEFILE);
             strncpy(cmd->file_dest,newString[2],DIM_NOMEFILE);
 
+            if ((strcmp(cmd->file_src, ""))==0 || (strcmp(cmd->file_dest, ""))==0){
+                printf(" *** Incomplete command: enter both of filename (src e dst) separated by a single space \n\n");
+                continue;
+
             //file extension check
             if (check_ex(cmd->file_src,cmd->file_dest)==1){
                 printf(" *** Source and destination file have not the same extension \n\n");
                 continue;
             }
-            if ((strcmp(cmd->file_src, ""))==0 || (strcmp(cmd->file_dest, ""))==0){
-                printf(" *** Incomplete command: enter both of filename (src e dst) separated by a single space \n\n");
-                continue;
+
             }
             else return(0);
         }
