@@ -1,0 +1,26 @@
+127.0.0.1   		srv_ip 		Server IP	
+1500        		srv_port 	Server port
+0          		prob        	Loss packet probability
+1           		tip_RTO     	RTO type (0=adaptive, 1=fixed)
+200         		RTO         	Starting RTO value (in mmms)
+64          		seq_max     	Max sequence number (set 2,4,8,16,32,64)
+32        		sws         	Window size (<= half of max sequence number)
+0           		rit_send    	Transmission interval (default=0)
+100         		rit_ack     	Waiting time for ack reception      
+50          		max_tent    	Max number of retransmission
+10          		TMax 		Maximum seconds of waiting for a package
+0           		coef_RTO        Multiplicative coefficient RTO (0=NO, 1=SI)
+0          		coef_RTD        Multiplicative coefficient of delay
+---------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
