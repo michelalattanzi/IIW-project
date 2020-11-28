@@ -3,8 +3,8 @@
 0          		prob        	Loss packet probability
 1           		tip_RTO     	RTO type (0=adaptive, 1=fixed)
 200         		RTO         	Starting RTO value (in mmms)
-2          		seq_max     	Max sequence number (set 2,4,8,16,32,64)
-1        		sws         	Window size (<= half of max sequence number)
+8          		seq_max     	Max sequence number (set 2,4,8,16,32,64)
+4        		sws         	Window size (<= half of max sequence number)
 0           		rit_send    	Transmission interval (default=0)
 100         		rit_ack     	Waiting time for ack reception      
 50          		max_tent    	Max number of retransmission
