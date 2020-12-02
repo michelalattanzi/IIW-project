@@ -1,0 +1,23 @@
+127.0.0.1   		srv_ip 		Server IP	
+1500        		srv_port 	Server port
+40          		prob        	Loss packet probability
+2          		seq_max     	Max sequence number (set 2,4,8,16,32,64)
+1          		sws         	Window size (<= half of max sequence number)
+0           		rit_send    	Transmission interval (default=0)
+50         		rit_ack     	Waiting time for ack reception      
+50          		max_tent    	Max number of retransmission
+50          		TMax 		Maximum seconds of waiting for a package
+0          		coef_RTD        Multiplicative coefficient of delay
+---------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+

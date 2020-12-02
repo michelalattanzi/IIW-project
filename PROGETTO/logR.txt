@@ -1,0 +1,5507 @@
+Configuration file: cfg00.txt 
+
+Parameters values: 
+127.0.0.1   		srv_ip 		Server IP	
+1500        		srv_port 	Server port
+0          		prob        	Loss packet probability
+2          		seq_max     	Max sequence number (set 2,4,8,16,32,64)
+1          		sws         	Window size (<= half of max sequence number)
+0           		rit_send    	Transmission interval (default=0)
+50         		rit_ack     	Waiting time for ack reception      
+50          		max_tent    	Max number of retransmission
+10          		TMax 		Maximum seconds of waiting for a package
+0          		coef_RTD        Multiplicative coefficient of delay
+       IN RECEIVE 
+
+       Starting time process 0 
+t= 0 :
+       Waiting for a frame arrive 
+t= 1 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 1 :
+       Waiting for a frame arrive 
+t= 52 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 52 :
+       Waiting for a frame arrive 
+t= 103 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 103 :
+       Waiting for a frame arrive 
+t= 155 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 155 :
+       Waiting for a frame arrive 
+t= 206 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 206 :
+       Waiting for a frame arrive 
+t= 258 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 258 :
+       Waiting for a frame arrive 
+t= 309 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 309 :
+       Waiting for a frame arrive 
+t= 361 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 361 :
+       Waiting for a frame arrive 
+t= 412 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 412 :
+       Waiting for a frame arrive 
+t= 464 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 464 :
+       Waiting for a frame arrive 
+t= 515 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 515 :
+       Waiting for a frame arrive 
+t= 566 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 566 :
+       Waiting for a frame arrive 
+t= 618 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 618 :
+       Waiting for a frame arrive 
+t= 669 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 669 :
+       Waiting for a frame arrive 
+t= 721 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 721 :
+       Waiting for a frame arrive 
+t= 772 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 772 :
+       Waiting for a frame arrive 
+t= 824 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 824 :
+       Waiting for a frame arrive 
+t= 825 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 825 :
+       Waiting for a frame arrive 
+t= 826 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 826 :
+       Waiting for a frame arrive 
+t= 878 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 878 :
+       Waiting for a frame arrive 
+t= 929 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 929 :
+       Waiting for a frame arrive 
+t= 981 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 981 :
+       Waiting for a frame arrive 
+t= 1032 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 1032 :
+       Waiting for a frame arrive 
+t= 1084 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 1084 :
+       Waiting for a frame arrive 
+t= 1085 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 1085 :
+       Waiting for a frame arrive 
+t= 1137 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 1137 :
+       Waiting for a frame arrive 
+t= 1188 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 1188 :
+       Waiting for a frame arrive 
+t= 1239 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 1239 :
+       Waiting for a frame arrive 
+t= 1291 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 1291 :
+       Waiting for a frame arrive 
+t= 1342 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 1342 :
+       Waiting for a frame arrive 
+t= 1394 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 1394 :
+       Waiting for a frame arrive 
+t= 1445 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 1445 :
+       Waiting for a frame arrive 
+t= 1497 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 1497 :
+       Waiting for a frame arrive 
+t= 1548 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 1548 :
+       Waiting for a frame arrive 
+t= 1599 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 1599 :
+       Waiting for a frame arrive 
+t= 1650 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 1650 :
+       Waiting for a frame arrive 
+t= 1701 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 1701 :
+       Waiting for a frame arrive 
+t= 1753 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 1753 :
+       Waiting for a frame arrive 
+t= 1754 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 1754 :
+       Waiting for a frame arrive 
+t= 1806 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 1806 :
+       Waiting for a frame arrive 
+t= 1807 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 1807 :
+       Waiting for a frame arrive 
+t= 1808 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 1808 :
+       Waiting for a frame arrive 
+t= 1809 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 1809 :
+       Waiting for a frame arrive 
+t= 1861 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 1861 :
+       Waiting for a frame arrive 
+t= 1912 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 1912 :
+       Waiting for a frame arrive 
+t= 1964 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 1964 :
+       Waiting for a frame arrive 
+t= 2015 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 2015 :
+       Waiting for a frame arrive 
+t= 2067 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 2067 :
+       Waiting for a frame arrive 
+t= 2118 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 2118 :
+       Waiting for a frame arrive 
+t= 2170 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 2170 :
+       Waiting for a frame arrive 
+t= 2221 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 2221 :
+       Waiting for a frame arrive 
+t= 2272 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 2272 :
+       Waiting for a frame arrive 
+t= 2323 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 2323 :
+       Waiting for a frame arrive 
+t= 2324 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 2324 :
+       Waiting for a frame arrive 
+t= 2374 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 2374 :
+       Waiting for a frame arrive 
+t= 2375 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 2375 :
+       Waiting for a frame arrive 
+t= 2425 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 2425 :
+       Waiting for a frame arrive 
+t= 2427 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 2427 :
+       Waiting for a frame arrive 
+t= 2477 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 2477 :
+       Waiting for a frame arrive 
+t= 2478 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 2478 :
+       Waiting for a frame arrive 
+t= 2528 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 2528 :
+       Waiting for a frame arrive 
+t= 2530 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 2530 :
+       Waiting for a frame arrive 
+t= 2580 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 2580 :
+       Waiting for a frame arrive 
+t= 2581 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 2581 :
+       Waiting for a frame arrive 
+t= 2631 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 2631 :
+       Waiting for a frame arrive 
+t= 2633 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 2633 :
+       Waiting for a frame arrive 
+t= 2683 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 2683 :
+       Waiting for a frame arrive 
+t= 2684 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 2684 :
+       Waiting for a frame arrive 
+t= 2735 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 2735 :
+       Waiting for a frame arrive 
+t= 2787 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 2787 :
+       Waiting for a frame arrive 
+t= 2837 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 2837 :
+       Waiting for a frame arrive 
+t= 2838 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 2838 :
+       Waiting for a frame arrive 
+t= 2890 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 2890 :
+       Waiting for a frame arrive 
+t= 2941 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 2941 :
+       Waiting for a frame arrive 
+t= 2991 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 2991 :
+       Waiting for a frame arrive 
+t= 2993 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 2993 :
+       Waiting for a frame arrive 
+t= 3043 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 3043 :
+       Waiting for a frame arrive 
+t= 3044 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 3044 :
+       Waiting for a frame arrive 
+t= 3094 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 3094 :
+       Waiting for a frame arrive 
+t= 3095 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 3095 :
+       Waiting for a frame arrive 
+t= 3147 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 3147 :
+       Waiting for a frame arrive 
+t= 3198 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 3198 :
+       Waiting for a frame arrive 
+t= 3248 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 3248 :
+       Waiting for a frame arrive 
+t= 3250 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 3250 :
+       Waiting for a frame arrive 
+t= 3300 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 3300 :
+       Waiting for a frame arrive 
+t= 3301 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 3301 :
+       Waiting for a frame arrive 
+t= 3351 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 3351 :
+       Waiting for a frame arrive 
+t= 3353 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 3353 :
+       Waiting for a frame arrive 
+t= 3403 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 3403 :
+       Waiting for a frame arrive 
+t= 3453 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+t= 3453 :
+       Waiting for a frame arrive 
+t= 3454 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 3454 :
+       Waiting for a frame arrive 
+t= 3505 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 3505 :
+       Waiting for a frame arrive 
+t= 3506 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 3506 :
+       Waiting for a frame arrive 
+t= 3557 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 3557 :
+       Waiting for a frame arrive 
+t= 3609 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 3609 :
+       Waiting for a frame arrive 
+t= 3610 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 3610 :
+       Waiting for a frame arrive 
+t= 3660 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 3660 :
+       Waiting for a frame arrive 
+t= 3662 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 3662 :
+       Waiting for a frame arrive 
+t= 3713 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 3713 :
+       Waiting for a frame arrive 
+t= 3763 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 3763 :
+       Waiting for a frame arrive 
+t= 3765 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 3765 :
+       Waiting for a frame arrive 
+t= 3815 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 3815 :
+       Waiting for a frame arrive 
+t= 3816 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 3816 :
+       Waiting for a frame arrive 
+t= 3866 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 3866 :
+       Waiting for a frame arrive 
+t= 3867 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 3867 :
+       Waiting for a frame arrive 
+t= 3919 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 3919 :
+       Waiting for a frame arrive 
+t= 3970 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 3970 :
+       Waiting for a frame arrive 
+t= 3972 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 3972 :
+       Waiting for a frame arrive 
+t= 4023 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 4023 :
+       Waiting for a frame arrive 
+t= 4074 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 4074 :
+       Waiting for a frame arrive 
+t= 4125 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 4125 :
+       Waiting for a frame arrive 
+t= 4126 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 4126 :
+       Waiting for a frame arrive 
+t= 4177 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 4177 :
+       Waiting for a frame arrive 
+t= 4229 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 4229 :
+       Waiting for a frame arrive 
+t= 4280 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 4280 :
+       Waiting for a frame arrive 
+t= 4332 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 4332 :
+       Waiting for a frame arrive 
+t= 4383 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 4383 :
+       Waiting for a frame arrive 
+t= 4433 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 4433 :
+       Waiting for a frame arrive 
+t= 4435 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 4435 :
+       Waiting for a frame arrive 
+t= 4485 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 4485 :
+       Waiting for a frame arrive 
+t= 4486 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 4486 :
+       Waiting for a frame arrive 
+t= 4536 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 4536 :
+       Waiting for a frame arrive 
+t= 4538 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 4538 :
+       Waiting for a frame arrive 
+t= 4589 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 4589 :
+       Waiting for a frame arrive 
+t= 4639 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 4639 :
+       Waiting for a frame arrive 
+t= 4640 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 4640 :
+       Waiting for a frame arrive 
+t= 4692 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 4692 :
+       Waiting for a frame arrive 
+t= 4743 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 4743 :
+       Waiting for a frame arrive 
+t= 4744 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 4744 :
+       Waiting for a frame arrive 
+t= 4746 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 4746 :
+       Waiting for a frame arrive 
+t= 4747 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 4747 :
+       Waiting for a frame arrive 
+t= 4797 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 4797 :
+       Waiting for a frame arrive 
+t= 4798 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 4799 :
+       Waiting for a frame arrive 
+t= 4849 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 4849 :
+       Waiting for a frame arrive 
+t= 4899 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 4899 :
+       Waiting for a frame arrive 
+t= 4900 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 4900 :
+       Waiting for a frame arrive 
+t= 4952 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 4952 :
+       Waiting for a frame arrive 
+t= 5003 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 5003 :
+       Waiting for a frame arrive 
+t= 5055 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 5055 :
+       Waiting for a frame arrive 
+t= 5106 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 5106 :
+       Waiting for a frame arrive 
+t= 5157 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 5157 :
+       Waiting for a frame arrive 
+t= 5159 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 5159 :
+       Waiting for a frame arrive 
+t= 5210 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 5210 :
+       Waiting for a frame arrive 
+t= 5260 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 5260 :
+       Waiting for a frame arrive 
+t= 5262 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 5262 :
+       Waiting for a frame arrive 
+t= 5313 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 5313 :
+       Waiting for a frame arrive 
+t= 5364 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 5364 :
+       Waiting for a frame arrive 
+t= 5416 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 5416 :
+       Waiting for a frame arrive 
+t= 5467 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 5467 :
+       Waiting for a frame arrive 
+t= 5519 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 5519 :
+       Waiting for a frame arrive 
+t= 5569 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 5569 :
+       Waiting for a frame arrive 
+t= 5570 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 5570 :
+       Waiting for a frame arrive 
+t= 5620 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 5620 :
+       Waiting for a frame arrive 
+t= 5622 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 5622 :
+       Waiting for a frame arrive 
+t= 5672 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 5672 :
+       Waiting for a frame arrive 
+t= 5673 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 5673 :
+       Waiting for a frame arrive 
+t= 5723 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 5723 :
+       Waiting for a frame arrive 
+t= 5725 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 5725 :
+       Waiting for a frame arrive 
+t= 5775 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 5775 :
+       Waiting for a frame arrive 
+t= 5776 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 5776 :
+       Waiting for a frame arrive 
+t= 5826 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 5826 :
+       Waiting for a frame arrive 
+t= 5827 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 5827 :
+       Waiting for a frame arrive 
+t= 5879 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 5879 :
+       Waiting for a frame arrive 
+t= 5930 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 5930 :
+       Waiting for a frame arrive 
+t= 5982 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 5982 :
+       Waiting for a frame arrive 
+t= 6033 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 6033 :
+       Waiting for a frame arrive 
+t= 6083 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 6083 :
+       Waiting for a frame arrive 
+t= 6085 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 6085 :
+       Waiting for a frame arrive 
+t= 6135 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 6135 :
+       Waiting for a frame arrive 
+t= 6136 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 6136 :
+       Waiting for a frame arrive 
+t= 6186 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 6186 :
+       Waiting for a frame arrive 
+t= 6188 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 6188 :
+       Waiting for a frame arrive 
+t= 6238 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 6238 :
+       Waiting for a frame arrive 
+t= 6239 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 6239 :
+       Waiting for a frame arrive 
+t= 6290 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 6290 :
+       Waiting for a frame arrive 
+t= 6341 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+t= 6341 :
+       Waiting for a frame arrive 
+t= 6342 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 6342 :
+       Waiting for a frame arrive 
+t= 6393 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 6393 :
+       Waiting for a frame arrive 
+t= 6445 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 6445 :
+       Waiting for a frame arrive 
+t= 6496 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 6496 :
+       Waiting for a frame arrive 
+t= 6547 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 6547 :
+       Waiting for a frame arrive 
+t= 6598 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 6598 :
+       Waiting for a frame arrive 
+t= 6649 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 6649 :
+       Waiting for a frame arrive 
+t= 6700 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 6700 :
+       Waiting for a frame arrive 
+t= 6701 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 6701 :
+       Waiting for a frame arrive 
+t= 6752 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 6752 :
+       Waiting for a frame arrive 
+t= 6804 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 6804 :
+       Waiting for a frame arrive 
+t= 6855 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 6855 :
+       Waiting for a frame arrive 
+t= 6856 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 6856 :
+       Waiting for a frame arrive 
+t= 6908 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 6908 :
+       Waiting for a frame arrive 
+t= 6959 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 6959 :
+       Waiting for a frame arrive 
+t= 7011 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 7011 :
+       Waiting for a frame arrive 
+t= 7062 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 7062 :
+       Waiting for a frame arrive 
+t= 7114 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 7114 :
+       Waiting for a frame arrive 
+t= 7165 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 7165 :
+       Waiting for a frame arrive 
+t= 7217 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 7217 :
+       Waiting for a frame arrive 
+t= 7267 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 7267 :
+       Waiting for a frame arrive 
+t= 7268 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 7268 :
+       Waiting for a frame arrive 
+t= 7318 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 7318 :
+       Waiting for a frame arrive 
+t= 7319 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 7319 :
+       Waiting for a frame arrive 
+t= 7370 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 7370 :
+       Waiting for a frame arrive 
+t= 7371 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 7371 :
+       Waiting for a frame arrive 
+t= 7422 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 7422 :
+       Waiting for a frame arrive 
+t= 7474 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 7474 :
+       Waiting for a frame arrive 
+t= 7525 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 7525 :
+       Waiting for a frame arrive 
+t= 7576 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 7577 :
+       Waiting for a frame arrive 
+t= 7627 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 7627 :
+       Waiting for a frame arrive 
+t= 7677 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 7677 :
+       Waiting for a frame arrive 
+t= 7678 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 7678 :
+       Waiting for a frame arrive 
+t= 7729 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 7729 :
+       Waiting for a frame arrive 
+t= 7730 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 7730 :
+       Waiting for a frame arrive 
+t= 7781 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 7781 :
+       Waiting for a frame arrive 
+t= 7833 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 7833 :
+       Waiting for a frame arrive 
+t= 7884 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 7884 :
+       Waiting for a frame arrive 
+t= 7936 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 7936 :
+       Waiting for a frame arrive 
+t= 7987 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 7987 :
+       Waiting for a frame arrive 
+t= 8039 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 8039 :
+       Waiting for a frame arrive 
+t= 8089 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 8089 :
+       Waiting for a frame arrive 
+t= 8090 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 8090 :
+       Waiting for a frame arrive 
+t= 8140 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 8140 :
+       Waiting for a frame arrive 
+t= 8141 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 8141 :
+       Waiting for a frame arrive 
+t= 8192 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 8192 :
+       Waiting for a frame arrive 
+t= 8193 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 8193 :
+       Waiting for a frame arrive 
+t= 8244 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 8244 :
+       Waiting for a frame arrive 
+t= 8245 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 8246 :
+       Waiting for a frame arrive 
+t= 8247 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 8247 :
+       Waiting for a frame arrive 
+t= 8248 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 8248 :
+       Waiting for a frame arrive 
+t= 8249 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 8249 :
+       Waiting for a frame arrive 
+t= 8301 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 8301 :
+       Waiting for a frame arrive 
+t= 8352 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 8352 :
+       Waiting for a frame arrive 
+t= 8404 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 8404 :
+       Waiting for a frame arrive 
+t= 8455 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 8455 :
+       Waiting for a frame arrive 
+t= 8506 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 8507 :
+       Waiting for a frame arrive 
+t= 8557 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 8557 :
+       Waiting for a frame arrive 
+t= 8608 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 8608 :
+       Waiting for a frame arrive 
+t= 8660 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 8660 :
+       Waiting for a frame arrive 
+t= 8711 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 8711 :
+       Waiting for a frame arrive 
+t= 8763 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 8763 :
+       Waiting for a frame arrive 
+t= 8814 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 8814 :
+       Waiting for a frame arrive 
+t= 8866 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 8866 :
+       Waiting for a frame arrive 
+t= 8916 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 8916 :
+       Waiting for a frame arrive 
+t= 8917 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 8917 :
+       Waiting for a frame arrive 
+t= 8918 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 8919 :
+       Waiting for a frame arrive 
+t= 8920 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 8920 :
+       Waiting for a frame arrive 
+t= 8921 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 8921 :
+       Waiting for a frame arrive 
+t= 8973 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 8973 :
+       Waiting for a frame arrive 
+t= 9023 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 9023 :
+       Waiting for a frame arrive 
+t= 9024 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 9024 :
+       Waiting for a frame arrive 
+t= 9025 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 9025 :
+       Waiting for a frame arrive 
+t= 9027 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 9027 :
+       Waiting for a frame arrive 
+t= 9028 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 9028 :
+       Waiting for a frame arrive 
+t= 9029 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 9029 :
+       Waiting for a frame arrive 
+t= 9030 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 9030 :
+       Waiting for a frame arrive 
+t= 9032 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 9032 :
+       Waiting for a frame arrive 
+t= 9033 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 9033 :
+       Waiting for a frame arrive 
+t= 9083 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 9083 :
+       Waiting for a frame arrive 
+t= 9084 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 9084 :
+       Waiting for a frame arrive 
+t= 9135 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 9135 :
+       Waiting for a frame arrive 
+t= 9136 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 9136 :
+       Waiting for a frame arrive 
+t= 9187 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 9187 :
+       Waiting for a frame arrive 
+t= 9239 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 9239 :
+       Waiting for a frame arrive 
+t= 9290 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 9290 :
+       Waiting for a frame arrive 
+t= 9342 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 9342 :
+       Waiting for a frame arrive 
+t= 9392 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 9392 :
+       Waiting for a frame arrive 
+t= 9393 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 9393 :
+       Waiting for a frame arrive 
+t= 9444 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 9445 :
+       Waiting for a frame arrive 
+t= 9495 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 9495 :
+       Waiting for a frame arrive 
+t= 9545 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 9545 :
+       Waiting for a frame arrive 
+t= 9546 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 9546 :
+       Waiting for a frame arrive 
+t= 9597 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 9597 :
+       Waiting for a frame arrive 
+t= 9598 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 9598 :
+       Waiting for a frame arrive 
+t= 9649 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 9649 :
+       Waiting for a frame arrive 
+t= 9699 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 9699 :
+       Waiting for a frame arrive 
+t= 9701 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 9701 :
+       Waiting for a frame arrive 
+t= 9752 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 9752 :
+       Waiting for a frame arrive 
+t= 9803 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 9803 :
+       Waiting for a frame arrive 
+t= 9805 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 9805 :
+       Waiting for a frame arrive 
+t= 9806 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 9806 :
+       Waiting for a frame arrive 
+t= 9807 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 9807 :
+       Waiting for a frame arrive 
+t= 9859 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 9859 :
+       Waiting for a frame arrive 
+t= 9910 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 9910 :
+       Waiting for a frame arrive 
+t= 9960 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 9960 :
+       Waiting for a frame arrive 
+t= 9962 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 9962 :
+       Waiting for a frame arrive 
+t= 10012 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 10012 :
+       Waiting for a frame arrive 
+t= 10013 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 10013 :
+       Waiting for a frame arrive 
+t= 10063 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 10063 :
+       Waiting for a frame arrive 
+t= 10065 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 10065 :
+       Waiting for a frame arrive 
+t= 10115 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 10115 :
+       Waiting for a frame arrive 
+t= 10116 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 10116 :
+       Waiting for a frame arrive 
+t= 10166 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 10166 :
+       Waiting for a frame arrive 
+t= 10168 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 10168 :
+       Waiting for a frame arrive 
+t= 10218 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 10218 :
+       Waiting for a frame arrive 
+t= 10219 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 10219 :
+       Waiting for a frame arrive 
+t= 10271 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 10271 :
+       Waiting for a frame arrive 
+t= 10321 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 10321 :
+       Waiting for a frame arrive 
+t= 10371 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 10371 :
+       Waiting for a frame arrive 
+t= 10372 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 10372 :
+       Waiting for a frame arrive 
+t= 10423 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 10423 :
+       Waiting for a frame arrive 
+t= 10424 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 10424 :
+       Waiting for a frame arrive 
+t= 10474 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 10474 :
+       Waiting for a frame arrive 
+t= 10475 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 10475 :
+       Waiting for a frame arrive 
+t= 10525 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 10525 :
+       Waiting for a frame arrive 
+t= 10527 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 10527 :
+       Waiting for a frame arrive 
+t= 10577 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 10577 :
+       Waiting for a frame arrive 
+t= 10578 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 10578 :
+       Waiting for a frame arrive 
+t= 10628 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 10628 :
+       Waiting for a frame arrive 
+t= 10630 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 10630 :
+       Waiting for a frame arrive 
+t= 10680 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 10680 :
+       Waiting for a frame arrive 
+t= 10681 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 10681 :
+       Waiting for a frame arrive 
+t= 10731 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 10731 :
+       Waiting for a frame arrive 
+t= 10733 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 10733 :
+       Waiting for a frame arrive 
+t= 10734 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 10734 :
+       Waiting for a frame arrive 
+t= 10784 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+t= 10784 :
+       Waiting for a frame arrive 
+t= 10785 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 10785 :
+       Waiting for a frame arrive 
+t= 10836 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 10836 :
+       Waiting for a frame arrive 
+t= 10837 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 10837 :
+       Waiting for a frame arrive 
+t= 10888 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 10888 :
+       Waiting for a frame arrive 
+t= 10938 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 10938 :
+       Waiting for a frame arrive 
+t= 10940 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 10940 :
+       Waiting for a frame arrive 
+t= 10990 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 10990 :
+       Waiting for a frame arrive 
+t= 10991 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 10991 :
+       Waiting for a frame arrive 
+t= 11041 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 11041 :
+       Waiting for a frame arrive 
+t= 11043 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 11043 :
+       Waiting for a frame arrive 
+t= 11094 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 11094 :
+       Waiting for a frame arrive 
+t= 11145 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 11146 :
+       Waiting for a frame arrive 
+t= 11197 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 11197 :
+       Waiting for a frame arrive 
+t= 11248 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 11248 :
+       Waiting for a frame arrive 
+t= 11250 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 11250 :
+       Waiting for a frame arrive 
+t= 11251 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 11251 :
+       Waiting for a frame arrive 
+t= 11302 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 11302 :
+       Waiting for a frame arrive 
+t= 11354 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 11354 :
+       Waiting for a frame arrive 
+t= 11405 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 11405 :
+       Waiting for a frame arrive 
+t= 11457 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 11457 :
+       Waiting for a frame arrive 
+t= 11508 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 11508 :
+       Waiting for a frame arrive 
+t= 11560 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 11560 :
+       Waiting for a frame arrive 
+t= 11611 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 11611 :
+       Waiting for a frame arrive 
+t= 11662 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 11663 :
+       Waiting for a frame arrive 
+t= 11713 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 11713 :
+       Waiting for a frame arrive 
+t= 11764 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 11764 :
+       Waiting for a frame arrive 
+t= 11766 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 11766 :
+       Waiting for a frame arrive 
+t= 11767 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 11767 :
+       Waiting for a frame arrive 
+t= 11819 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 11819 :
+       Waiting for a frame arrive 
+t= 11870 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 11870 :
+       Waiting for a frame arrive 
+t= 11921 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 11922 :
+       Waiting for a frame arrive 
+t= 11972 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 11972 :
+       Waiting for a frame arrive 
+t= 12022 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 12022 :
+       Waiting for a frame arrive 
+t= 12023 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 12023 :
+       Waiting for a frame arrive 
+t= 12074 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 12074 :
+       Waiting for a frame arrive 
+t= 12075 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 12075 :
+       Waiting for a frame arrive 
+t= 12126 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 12126 :
+       Waiting for a frame arrive 
+t= 12178 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 12178 :
+       Waiting for a frame arrive 
+t= 12229 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 12229 :
+       Waiting for a frame arrive 
+t= 12281 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 12281 :
+       Waiting for a frame arrive 
+t= 12331 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 12331 :
+       Waiting for a frame arrive 
+t= 12332 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 12332 :
+       Waiting for a frame arrive 
+t= 12334 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 12334 :
+       Waiting for a frame arrive 
+t= 12384 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 12384 :
+       Waiting for a frame arrive 
+t= 12434 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 12434 :
+       Waiting for a frame arrive 
+t= 12435 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 12435 :
+       Waiting for a frame arrive 
+t= 12486 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 12486 :
+       Waiting for a frame arrive 
+t= 12487 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 12487 :
+       Waiting for a frame arrive 
+t= 12538 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 12538 :
+       Waiting for a frame arrive 
+t= 12590 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 12590 :
+       Waiting for a frame arrive 
+t= 12641 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 12641 :
+       Waiting for a frame arrive 
+t= 12693 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 12693 :
+       Waiting for a frame arrive 
+t= 12743 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 12743 :
+       Waiting for a frame arrive 
+t= 12744 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 12744 :
+       Waiting for a frame arrive 
+t= 12794 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 12794 :
+       Waiting for a frame arrive 
+t= 12796 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 12796 :
+       Waiting for a frame arrive 
+t= 12847 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 12847 :
+       Waiting for a frame arrive 
+t= 12897 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 12897 :
+       Waiting for a frame arrive 
+t= 12898 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 12898 :
+       Waiting for a frame arrive 
+t= 12949 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 12949 :
+       Waiting for a frame arrive 
+t= 12999 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 12999 :
+       Waiting for a frame arrive 
+t= 13000 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 13000 :
+       Waiting for a frame arrive 
+t= 13051 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 13051 :
+       Waiting for a frame arrive 
+t= 13052 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 13052 :
+       Waiting for a frame arrive 
+t= 13103 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 13103 :
+       Waiting for a frame arrive 
+t= 13155 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 13155 :
+       Waiting for a frame arrive 
+t= 13206 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 13206 :
+       Waiting for a frame arrive 
+t= 13256 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+t= 13256 :
+       Waiting for a frame arrive 
+t= 13257 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 13258 :
+       Waiting for a frame arrive 
+t= 13308 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 13308 :
+       Waiting for a frame arrive 
+t= 13359 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 13359 :
+       Waiting for a frame arrive 
+t= 13410 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 13410 :
+       Waiting for a frame arrive 
+t= 13411 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 13411 :
+       Waiting for a frame arrive 
+t= 13461 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 13461 :
+       Waiting for a frame arrive 
+t= 13462 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 13462 :
+       Waiting for a frame arrive 
+t= 13512 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 13512 :
+       Waiting for a frame arrive 
+t= 13514 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 13514 :
+       Waiting for a frame arrive 
+t= 13564 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 13564 :
+       Waiting for a frame arrive 
+t= 13565 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 13565 :
+       Waiting for a frame arrive 
+t= 13615 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 13615 :
+       Waiting for a frame arrive 
+t= 13617 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 13617 :
+       Waiting for a frame arrive 
+t= 13667 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 13667 :
+       Waiting for a frame arrive 
+t= 13668 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 13668 :
+       Waiting for a frame arrive 
+t= 13718 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 13718 :
+       Waiting for a frame arrive 
+t= 13720 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 13720 :
+       Waiting for a frame arrive 
+t= 13770 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 13770 :
+       Waiting for a frame arrive 
+t= 13771 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 13771 :
+       Waiting for a frame arrive 
+t= 13821 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 13821 :
+       Waiting for a frame arrive 
+t= 13822 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 13822 :
+       Waiting for a frame arrive 
+t= 13873 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 13873 :
+       Waiting for a frame arrive 
+t= 13874 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 13874 :
+       Waiting for a frame arrive 
+t= 13925 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 13925 :
+       Waiting for a frame arrive 
+t= 13977 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 13977 :
+       Waiting for a frame arrive 
+t= 14027 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 14027 :
+       Waiting for a frame arrive 
+t= 14028 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14028 :
+       Waiting for a frame arrive 
+t= 14080 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14080 :
+       Waiting for a frame arrive 
+t= 14130 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 14130 :
+       Waiting for a frame arrive 
+t= 14131 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14131 :
+       Waiting for a frame arrive 
+t= 14182 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14182 :
+       Waiting for a frame arrive 
+t= 14233 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 14233 :
+       Waiting for a frame arrive 
+t= 14234 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14234 :
+       Waiting for a frame arrive 
+t= 14285 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14285 :
+       Waiting for a frame arrive 
+t= 14337 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14337 :
+       Waiting for a frame arrive 
+t= 14338 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14338 :
+       Waiting for a frame arrive 
+t= 14339 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14339 :
+       Waiting for a frame arrive 
+t= 14341 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14341 :
+       Waiting for a frame arrive 
+t= 14342 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14342 :
+       Waiting for a frame arrive 
+t= 14343 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14343 :
+       Waiting for a frame arrive 
+t= 14344 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14344 :
+       Waiting for a frame arrive 
+t= 14346 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14346 :
+       Waiting for a frame arrive 
+t= 14347 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14347 :
+       Waiting for a frame arrive 
+t= 14398 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14399 :
+       Waiting for a frame arrive 
+t= 14449 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14449 :
+       Waiting for a frame arrive 
+t= 14499 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 14499 :
+       Waiting for a frame arrive 
+t= 14500 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14500 :
+       Waiting for a frame arrive 
+t= 14552 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14552 :
+       Waiting for a frame arrive 
+t= 14553 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14553 :
+       Waiting for a frame arrive 
+t= 14554 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14554 :
+       Waiting for a frame arrive 
+t= 14555 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14555 :
+       Waiting for a frame arrive 
+t= 14557 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14557 :
+       Waiting for a frame arrive 
+t= 14558 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14558 :
+       Waiting for a frame arrive 
+t= 14559 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14559 :
+       Waiting for a frame arrive 
+t= 14560 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14560 :
+       Waiting for a frame arrive 
+t= 14562 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14562 :
+       Waiting for a frame arrive 
+t= 14613 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14613 :
+       Waiting for a frame arrive 
+t= 14665 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14665 :
+       Waiting for a frame arrive 
+t= 14715 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14715 :
+       Waiting for a frame arrive 
+t= 14765 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 14765 :
+       Waiting for a frame arrive 
+t= 14767 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14767 :
+       Waiting for a frame arrive 
+t= 14817 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14817 :
+       Waiting for a frame arrive 
+t= 14868 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14868 :
+       Waiting for a frame arrive 
+t= 14919 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 14919 :
+       Waiting for a frame arrive 
+t= 14920 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 14920 :
+       Waiting for a frame arrive 
+t= 14971 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 14971 :
+       Waiting for a frame arrive 
+t= 15023 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 15023 :
+       Waiting for a frame arrive 
+t= 15074 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 15074 :
+       Waiting for a frame arrive 
+t= 15124 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+t= 15124 :
+       Waiting for a frame arrive 
+t= 15126 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 15126 :
+       Waiting for a frame arrive 
+t= 15176 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 15176 :
+       Waiting for a frame arrive 
+t= 15177 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 15177 :
+       Waiting for a frame arrive 
+t= 15227 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 15227 :
+       Waiting for a frame arrive 
+t= 15228 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 15228 :
+       Waiting for a frame arrive 
+t= 15279 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 15279 :
+       Waiting for a frame arrive 
+t= 15280 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 15280 :
+       Waiting for a frame arrive 
+t= 15331 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 15331 :
+       Waiting for a frame arrive 
+t= 15383 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 15383 :
+       Waiting for a frame arrive 
+t= 15434 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 15434 :
+       Waiting for a frame arrive 
+t= 15486 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 15486 :
+       Waiting for a frame arrive 
+t= 15537 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 15537 :
+       Waiting for a frame arrive 
+t= 15587 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 15587 :
+       Waiting for a frame arrive 
+t= 15589 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 15589 :
+       Waiting for a frame arrive 
+t= 15639 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 15639 :
+       Waiting for a frame arrive 
+t= 15689 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 15689 :
+       Waiting for a frame arrive 
+t= 15690 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 15690 :
+       Waiting for a frame arrive 
+t= 15741 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 15741 :
+       Waiting for a frame arrive 
+t= 15742 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 15742 :
+       Waiting for a frame arrive 
+t= 15793 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 15793 :
+       Waiting for a frame arrive 
+t= 15845 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 15845 :
+       Waiting for a frame arrive 
+t= 15896 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 15896 :
+       Waiting for a frame arrive 
+t= 15948 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 15948 :
+       Waiting for a frame arrive 
+t= 15998 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 15998 :
+       Waiting for a frame arrive 
+t= 15999 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 15999 :
+       Waiting for a frame arrive 
+t= 16049 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 16049 :
+       Waiting for a frame arrive 
+t= 16050 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16050 :
+       Waiting for a frame arrive 
+t= 16101 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 16101 :
+       Waiting for a frame arrive 
+t= 16102 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16102 :
+       Waiting for a frame arrive 
+t= 16153 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16153 :
+       Waiting for a frame arrive 
+t= 16205 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16205 :
+       Waiting for a frame arrive 
+t= 16256 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16256 :
+       Waiting for a frame arrive 
+t= 16308 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16308 :
+       Waiting for a frame arrive 
+t= 16309 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16309 :
+       Waiting for a frame arrive 
+t= 16310 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16310 :
+       Waiting for a frame arrive 
+t= 16311 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16311 :
+       Waiting for a frame arrive 
+t= 16313 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16313 :
+       Waiting for a frame arrive 
+t= 16314 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16314 :
+       Waiting for a frame arrive 
+t= 16315 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16315 :
+       Waiting for a frame arrive 
+t= 16316 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16316 :
+       Waiting for a frame arrive 
+t= 16318 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16318 :
+       Waiting for a frame arrive 
+t= 16369 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16369 :
+       Waiting for a frame arrive 
+t= 16421 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16421 :
+       Waiting for a frame arrive 
+t= 16471 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16471 :
+       Waiting for a frame arrive 
+t= 16472 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16472 :
+       Waiting for a frame arrive 
+t= 16473 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16474 :
+       Waiting for a frame arrive 
+t= 16475 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16475 :
+       Waiting for a frame arrive 
+t= 16476 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16476 :
+       Waiting for a frame arrive 
+t= 16477 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16477 :
+       Waiting for a frame arrive 
+t= 16479 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16479 :
+       Waiting for a frame arrive 
+t= 16530 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16530 :
+       Waiting for a frame arrive 
+t= 16582 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16582 :
+       Waiting for a frame arrive 
+t= 16632 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 16632 :
+       Waiting for a frame arrive 
+t= 16633 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16633 :
+       Waiting for a frame arrive 
+t= 16683 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 16683 :
+       Waiting for a frame arrive 
+t= 16685 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16685 :
+       Waiting for a frame arrive 
+t= 16735 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 16735 :
+       Waiting for a frame arrive 
+t= 16736 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16736 :
+       Waiting for a frame arrive 
+t= 16787 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16787 :
+       Waiting for a frame arrive 
+t= 16838 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 16838 :
+       Waiting for a frame arrive 
+t= 16839 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16839 :
+       Waiting for a frame arrive 
+t= 16890 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16890 :
+       Waiting for a frame arrive 
+t= 16942 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 16942 :
+       Waiting for a frame arrive 
+t= 16993 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 16993 :
+       Waiting for a frame arrive 
+t= 17045 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 17045 :
+       Waiting for a frame arrive 
+t= 17095 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 17095 :
+       Waiting for a frame arrive 
+t= 17096 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 17096 :
+       Waiting for a frame arrive 
+t= 17146 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 17146 :
+       Waiting for a frame arrive 
+t= 17147 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 17147 :
+       Waiting for a frame arrive 
+t= 17198 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 17198 :
+       Waiting for a frame arrive 
+t= 17199 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 17199 :
+       Waiting for a frame arrive 
+t= 17250 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 17250 :
+       Waiting for a frame arrive 
+t= 17302 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 17302 :
+       Waiting for a frame arrive 
+t= 17353 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 17353 :
+       Waiting for a frame arrive 
+t= 17405 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 17405 :
+       Waiting for a frame arrive 
+t= 17456 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 17456 :
+       Waiting for a frame arrive 
+t= 17507 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 17507 :
+       Waiting for a frame arrive 
+t= 17558 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 17558 :
+       Waiting for a frame arrive 
+t= 17559 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 17559 :
+       Waiting for a frame arrive 
+t= 17610 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 17610 :
+       Waiting for a frame arrive 
+t= 17662 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 17662 :
+       Waiting for a frame arrive 
+t= 17713 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 17713 :
+       Waiting for a frame arrive 
+t= 17765 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 17765 :
+       Waiting for a frame arrive 
+t= 17816 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 17816 :
+       Waiting for a frame arrive 
+t= 17866 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 17866 :
+       Waiting for a frame arrive 
+t= 17867 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 17867 :
+       Waiting for a frame arrive 
+t= 17918 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 17918 :
+       Waiting for a frame arrive 
+t= 17919 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 17919 :
+       Waiting for a frame arrive 
+t= 17970 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 17970 :
+       Waiting for a frame arrive 
+t= 18022 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 18022 :
+       Waiting for a frame arrive 
+t= 18073 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 18073 :
+       Waiting for a frame arrive 
+t= 18125 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 18125 :
+       Waiting for a frame arrive 
+t= 18176 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 18176 :
+       Waiting for a frame arrive 
+t= 18226 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+t= 18226 :
+       Waiting for a frame arrive 
+t= 18227 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 18227 :
+       Waiting for a frame arrive 
+t= 18278 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 18278 :
+       Waiting for a frame arrive 
+t= 18279 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 18279 :
+       Waiting for a frame arrive 
+t= 18330 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 18330 :
+       Waiting for a frame arrive 
+t= 18382 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 18382 :
+       Waiting for a frame arrive 
+t= 18433 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 18433 :
+       Waiting for a frame arrive 
+t= 18485 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 18485 :
+       Waiting for a frame arrive 
+t= 18536 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 18536 :
+       Waiting for a frame arrive 
+t= 18588 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 18588 :
+       Waiting for a frame arrive 
+t= 18639 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 18639 :
+       Waiting for a frame arrive 
+t= 18689 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 18689 :
+       Waiting for a frame arrive 
+t= 18690 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 18690 :
+       Waiting for a frame arrive 
+t= 18741 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 18741 :
+       Waiting for a frame arrive 
+t= 18742 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 18742 :
+       Waiting for a frame arrive 
+t= 18793 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 18793 :
+       Waiting for a frame arrive 
+t= 18845 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 18845 :
+       Waiting for a frame arrive 
+t= 18896 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 18896 :
+       Waiting for a frame arrive 
+t= 18948 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 18948 :
+       Waiting for a frame arrive 
+t= 18998 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 18998 :
+       Waiting for a frame arrive 
+t= 18999 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 18999 :
+       Waiting for a frame arrive 
+t= 19049 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 19049 :
+       Waiting for a frame arrive 
+t= 19050 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 19050 :
+       Waiting for a frame arrive 
+t= 19101 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 19101 :
+       Waiting for a frame arrive 
+t= 19102 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 19102 :
+       Waiting for a frame arrive 
+t= 19153 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 19153 :
+       Waiting for a frame arrive 
+t= 19205 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 19205 :
+       Waiting for a frame arrive 
+t= 19256 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 19256 :
+       Waiting for a frame arrive 
+t= 19308 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 19308 :
+       Waiting for a frame arrive 
+t= 19358 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 19358 :
+       Waiting for a frame arrive 
+t= 19359 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 19359 :
+       Waiting for a frame arrive 
+t= 19411 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 19411 :
+       Waiting for a frame arrive 
+t= 19461 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 19461 :
+       Waiting for a frame arrive 
+t= 19512 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 19512 :
+       Waiting for a frame arrive 
+t= 19563 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+t= 19563 :
+       Waiting for a frame arrive 
+t= 19564 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 19564 :
+       Waiting for a frame arrive 
+t= 19615 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 19615 :
+       Waiting for a frame arrive 
+t= 19667 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 19667 :
+       Waiting for a frame arrive 
+t= 19718 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 19718 :
+       Waiting for a frame arrive 
+t= 19770 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 19770 :
+       Waiting for a frame arrive 
+t= 19820 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 19820 :
+       Waiting for a frame arrive 
+t= 19821 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 19821 :
+       Waiting for a frame arrive 
+t= 19871 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 19871 :
+       Waiting for a frame arrive 
+t= 19872 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 19873 :
+       Waiting for a frame arrive 
+t= 19923 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 19923 :
+       Waiting for a frame arrive 
+t= 19974 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 19974 :
+       Waiting for a frame arrive 
+t= 20025 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 20025 :
+       Waiting for a frame arrive 
+t= 20026 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 20026 :
+       Waiting for a frame arrive 
+t= 20076 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 20076 :
+       Waiting for a frame arrive 
+t= 20077 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 20077 :
+       Waiting for a frame arrive 
+t= 20127 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 20127 :
+       Waiting for a frame arrive 
+t= 20129 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 20129 :
+       Waiting for a frame arrive 
+t= 20179 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 20179 :
+       Waiting for a frame arrive 
+t= 20180 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 20180 :
+       Waiting for a frame arrive 
+t= 20230 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 20230 :
+       Waiting for a frame arrive 
+t= 20232 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 20232 :
+       Waiting for a frame arrive 
+t= 20283 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 20283 :
+       Waiting for a frame arrive 
+t= 20284 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 20284 :
+       Waiting for a frame arrive 
+t= 20286 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 20286 :
+       Waiting for a frame arrive 
+t= 20287 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 20287 :
+       Waiting for a frame arrive 
+t= 20288 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 20288 :
+       Waiting for a frame arrive 
+t= 20338 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 20338 :
+       Waiting for a frame arrive 
+t= 20340 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 20340 :
+       Waiting for a frame arrive 
+t= 20390 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 20390 :
+       Waiting for a frame arrive 
+t= 20391 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 20391 :
+       Waiting for a frame arrive 
+t= 20441 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 20441 :
+       Waiting for a frame arrive 
+t= 20443 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 20443 :
+       Waiting for a frame arrive 
+t= 20493 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 20493 :
+       Waiting for a frame arrive 
+t= 20494 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 20494 :
+       Waiting for a frame arrive 
+t= 20544 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 20544 :
+       Waiting for a frame arrive 
+t= 20546 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 20546 :
+       Waiting for a frame arrive 
+t= 20596 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 20596 :
+       Waiting for a frame arrive 
+t= 20597 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 20597 :
+       Waiting for a frame arrive 
+t= 20599 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 20599 :
+       Waiting for a frame arrive 
+t= 20649 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 20649 :
+       Waiting for a frame arrive 
+t= 20650 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 20650 :
+       Waiting for a frame arrive 
+t= 20702 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 20702 :
+       Waiting for a frame arrive 
+t= 20752 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 20752 :
+       Waiting for a frame arrive 
+t= 20802 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 20802 :
+       Waiting for a frame arrive 
+t= 20803 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 20803 :
+       Waiting for a frame arrive 
+t= 20854 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 20854 :
+       Waiting for a frame arrive 
+t= 20855 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 20855 :
+       Waiting for a frame arrive 
+t= 20906 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 20906 :
+       Waiting for a frame arrive 
+t= 20958 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 20958 :
+       Waiting for a frame arrive 
+t= 21008 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 21008 :
+       Waiting for a frame arrive 
+t= 21009 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 21009 :
+       Waiting for a frame arrive 
+t= 21061 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 21061 :
+       Waiting for a frame arrive 
+t= 21112 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 21112 :
+       Waiting for a frame arrive 
+t= 21162 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 21162 :
+       Waiting for a frame arrive 
+t= 21163 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 21163 :
+       Waiting for a frame arrive 
+t= 21214 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 21214 :
+       Waiting for a frame arrive 
+t= 21215 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 21215 :
+       Waiting for a frame arrive 
+t= 21266 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 21266 :
+       Waiting for a frame arrive 
+t= 21318 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 21318 :
+       Waiting for a frame arrive 
+t= 21369 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 21369 :
+       Waiting for a frame arrive 
+t= 21421 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 21421 :
+       Waiting for a frame arrive 
+t= 21471 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 21471 :
+       Waiting for a frame arrive 
+t= 21472 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 21472 :
+       Waiting for a frame arrive 
+t= 21522 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 21522 :
+       Waiting for a frame arrive 
+t= 21524 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 21524 :
+       Waiting for a frame arrive 
+t= 21574 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 21574 :
+       Waiting for a frame arrive 
+t= 21624 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+t= 21624 :
+       Waiting for a frame arrive 
+t= 21625 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 21625 :
+       Waiting for a frame arrive 
+t= 21677 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 21677 :
+       Waiting for a frame arrive 
+t= 21728 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 21728 :
+       Waiting for a frame arrive 
+t= 21780 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 21780 :
+       Waiting for a frame arrive 
+t= 21831 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 21831 :
+       Waiting for a frame arrive 
+t= 21883 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 21883 :
+       Waiting for a frame arrive 
+t= 21934 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 21934 :
+       Waiting for a frame arrive 
+t= 21984 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 21984 :
+       Waiting for a frame arrive 
+t= 21985 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 21985 :
+       Waiting for a frame arrive 
+t= 22037 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 22037 :
+       Waiting for a frame arrive 
+t= 22088 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 22088 :
+       Waiting for a frame arrive 
+t= 22140 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 22140 :
+       Waiting for a frame arrive 
+t= 22191 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 22191 :
+       Waiting for a frame arrive 
+t= 22243 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 22243 :
+       Waiting for a frame arrive 
+t= 22293 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 22293 :
+       Waiting for a frame arrive 
+t= 22294 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 22294 :
+       Waiting for a frame arrive 
+t= 22345 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 22346 :
+       Waiting for a frame arrive 
+t= 22396 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 22396 :
+       Waiting for a frame arrive 
+t= 22446 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 22446 :
+       Waiting for a frame arrive 
+t= 22447 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 22447 :
+       Waiting for a frame arrive 
+t= 22498 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 22498 :
+       Waiting for a frame arrive 
+t= 22499 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 22499 :
+       Waiting for a frame arrive 
+t= 22550 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 22550 :
+       Waiting for a frame arrive 
+t= 22602 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 22602 :
+       Waiting for a frame arrive 
+t= 22653 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 22653 :
+       Waiting for a frame arrive 
+t= 22704 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 22705 :
+       Waiting for a frame arrive 
+t= 22756 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 22756 :
+       Waiting for a frame arrive 
+t= 22807 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 22807 :
+       Waiting for a frame arrive 
+t= 22859 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 22859 :
+       Waiting for a frame arrive 
+t= 22910 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 22910 :
+       Waiting for a frame arrive 
+t= 22962 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 22962 :
+       Waiting for a frame arrive 
+t= 23013 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 23013 :
+       Waiting for a frame arrive 
+t= 23063 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 23063 :
+       Waiting for a frame arrive 
+t= 23065 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 23065 :
+       Waiting for a frame arrive 
+t= 23115 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 23115 :
+       Waiting for a frame arrive 
+t= 23165 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+t= 23165 :
+       Waiting for a frame arrive 
+t= 23166 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 23166 :
+       Waiting for a frame arrive 
+t= 23217 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 23217 :
+       Waiting for a frame arrive 
+t= 23218 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 23218 :
+       Waiting for a frame arrive 
+t= 23269 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 23269 :
+       Waiting for a frame arrive 
+t= 23321 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 23321 :
+       Waiting for a frame arrive 
+t= 23372 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 23372 :
+       Waiting for a frame arrive 
+t= 23424 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 23424 :
+       Waiting for a frame arrive 
+t= 23474 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       Received frame out of sequence             0 
+   ... Window   winbase = 1;   winlast = 1 
+
+ t= 23474 :
+       Waiting for a frame arrive 
+t= 23475 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 23475 :
+       Waiting for a frame arrive 
+t= 23525 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       Received frame out of sequence             1 
+   ... Window   winbase = 0;   winlast = 0 
+
+ t= 23525 :
+       Waiting for a frame arrive 
+t= 23526 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 23527 :
+       Waiting for a frame arrive 
+t= 23577 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 23577 :
+       Waiting for a frame arrive 
+t= 23627 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+t= 23627 :
+       Waiting for a frame arrive 
+t= 23628 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 23628 :
+       Waiting for a frame arrive 
+t= 23680 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 23680 :
+       Waiting for a frame arrive 
+t= 23681 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 23681 :
+       Waiting for a frame arrive 
+t= 23682 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+t= 23682 :
+       Waiting for a frame arrive 
+t= 23684 :
+       Received frame with sequence number        0 
+       ACK sent with sequence number              0 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 1;   winlast = 1 
+ 
+t= 23684 :
+       Waiting for a frame arrive 
+t= 23685 :
+       Received frame with sequence number        1 
+       ACK sent with sequence number              1 
+       IN WRITE_FRAME --> Write on file 
+   ... New window   winbase = 2;   winlast = 0 
+ 
+
+ ================================================================================================================ 
+  RECEPTION STATS 
+   total received frames/ transmitted ack  : 700 
+   frames out of sequence                  : 122 
+   total number of written frames          : 539 
+ ================================================================================================================= 
+
